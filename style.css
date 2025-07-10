@@ -6,7 +6,7 @@ body {
   width: 100vw;
   box-sizing: border-box;
   font-family: 'Sora', Arial, sans-serif;
-  background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1500&q=80') no-repeat center center fixed;
+  background: url('https://cdn.prod.website-files.com/6374140cc01b132d1cad9d00/6823a2530009ab7af361bb37_2M0A9552.jpg') no-repeat center center fixed;
   background-size: cover;
   position: relative;
 }
@@ -18,10 +18,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* Glassmorphism effect */
-  background: rgba(30, 34, 54, 0.35);
-  backdrop-filter: blur(8px) saturate(120%);
-  -webkit-backdrop-filter: blur(8px) saturate(120%);
+  background: rgba(30, 34, 54, 0.35); /* keep only a slight dark overlay for readability */
   position: absolute;
   top: 0;
   left: 0;
@@ -67,15 +64,11 @@ body {
   position: absolute;
   top: 32px;
   left: 32px;
-  width: 64px;
-  height: 64px;
+  width: 200px;
+  height: 200px;
   object-fit: contain;
-  background: rgba(255,255,255,0.7);
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
   z-index: 10;
-  padding: 8px;
-  transition: box-shadow 0.2s;
+  padding: 0;
 }
 .frat-logo:hover {
   box-shadow: 0 4px 24px rgba(0,0,0,0.18);
@@ -142,9 +135,9 @@ body {
   .frat-logo {
     top: 12px;
     left: 12px;
-    width: 40px;
-    height: 40px;
-    padding: 4px;
+    width: 120px;
+    height: 120px;
+    padding: 0;
   }
   .main-nav {
     top: 12px;
