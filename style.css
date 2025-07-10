@@ -92,12 +92,15 @@ body {
 .main-nav a {
   color: #fff;
   text-decoration: none;
-  font-size: 1.08rem;
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 0.92rem;
   font-weight: 400;
   letter-spacing: 0.04em;
   padding: 7px 0;
   border-radius: 6px;
   transition: color 0.18s, background 0.18s;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .main-nav a:hover {
