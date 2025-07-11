@@ -476,6 +476,8 @@ body::before {
 
 .carousel-track {
   display: flex;
+  justify-content: center;
+  align-items: center;
   overflow: hidden;
   scroll-behavior: smooth;
   width: 100vw;

@@ -48,13 +48,45 @@ document.addEventListener('DOMContentLoaded', function() {
   const leftBtn = document.querySelector('.carousel-arrow.left');
   const rightBtn = document.querySelector('.carousel-arrow.right');
   if (track && leftBtn && rightBtn) {
-    const imgWidth = track.querySelector('img') ? track.querySelector('img').offsetWidth + 24 : 260 + 24; // 24px gap
+    const images = Array.from(track.children);
+    const imgCount = images.length;
+    const imgWidth = images[0].offsetWidth + parseInt(getComputedStyle(track).gap) || 0;
+
+    // Clone first and last images for infinite effect
+    images.slice(0, 2).forEach(img => track.appendChild(img.cloneNode(true)));
+    images.slice(-2).forEach(img => track.insertBefore(img.cloneNode(true), track.firstChild));
+
+    // Set initial scroll position to the first real image
+    let currentIndex = 2;
+    function scrollToIndex(index, behavior = 'auto') {
+      const scrollLeft = index * imgWidth;
+      track.scrollTo({ left: scrollLeft, behavior });
+    }
+    scrollToIndex(currentIndex);
+
     leftBtn.addEventListener('click', () => {
-      track.scrollBy({ left: -imgWidth, behavior: 'smooth' });
+      currentIndex--;
+      scrollToIndex(currentIndex, 'smooth');
+      if (currentIndex === 0) {
+        setTimeout(() => {
+          currentIndex = imgCount;
+          scrollToIndex(currentIndex);
+        }, 350);
+      }
     });
     rightBtn.addEventListener('click', () => {
-      track.scrollBy({ left: imgWidth, behavior: 'smooth' });
+      currentIndex++;
+      scrollToIndex(currentIndex, 'smooth');
+      if (currentIndex === imgCount + 1) {
+        setTimeout(() => {
+          currentIndex = 1;
+          scrollToIndex(currentIndex);
+        }, 350);
+      }
     });
+
+    // Center the carousel on resize
+    window.addEventListener('resize', () => scrollToIndex(currentIndex));
   }
 });
 
