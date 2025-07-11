@@ -98,7 +98,7 @@ body::before {
   padding: 0;
 }
 .frat-logo:hover {
-  box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+  /* box-shadow removed to prevent edge effect */
 }
 
 .main-nav {
@@ -561,4 +561,24 @@ body::before {
   justify-content: center;
   text-align: center;
   box-shadow: none;
+} 
+
+.logo-link {
+  position: absolute;
+  top: 32px;
+  left: 32px;
+  width: 120px;
+  height: 120px;
+  z-index: 10;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+.logo-link img.frat-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  padding: 0;
+  margin: 0;
 } 

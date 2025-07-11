@@ -1,1 +1,68 @@
- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AEZ Brothers</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@900&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    html {
+      overflow-y: scroll;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      width: 100vw;
+      box-sizing: border-box;
+      font-family: 'Sora', Arial, sans-serif;
+      background: url('https://cdn.prod.website-files.com/6374140cc01b132d1cad9d00/6823a2530009ab7af361bb37_2M0A9552.jpg') no-repeat center 80% fixed;
+      background-size: cover;
+      position: relative;
+    }
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.65);
+      z-index: 0;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+  <a href="index.html" class="logo-link">
+    <img src="https://cdn.prod.website-files.com/6374140cc01b132d1cad9d00/63741e15608f0b87b4561559_final_logo-2.png" alt="Fraternity Logo" class="frat-logo" />
+  </a>
+  <nav class="main-nav">
+    <a href="brothers.html">Brothers</a>
+    <a href="alumni.html">Alumni</a>
+    <a href="#paradigm">Paradigm</a>
+    <a href="https://www.berkeleyinnovate.com/" target="_blank">Innovate</a>
+    <a href="#contact">Contact</a>
+    <div class="nav-dropdown">
+      <a href="#join" class="join-link">Join Us</a>
+      <div class="dropdown-menu">
+        <a href="#timeline">Timeline</a>
+        <a href="#coffee-chats">Coffee Chats</a>
+        <a href="#application">Application</a>
+      </div>
+    </div>
+    <a href="https://www.instagram.com/aezberkeley/" target="_blank" aria-label="Instagram" class="nav-icon instagram">
+      <img src="instagram.png" alt="Instagram" class="instagram-img" />
+    </a>
+    <a href="https://www.linkedin.com/company/alpha-epsilon-zeta/" target="_blank" aria-label="LinkedIn" class="nav-icon">
+      <img src="linkedin.png" alt="LinkedIn" class="linkedin-img" />
+    </a>
+  </nav>
+</body>
+</html> 
