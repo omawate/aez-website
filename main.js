@@ -1,6 +1,6 @@
 console.log('AEZ Website plain JS loaded.'); 
 
-function animateCounter(element, target, prefix = '', suffix = '', duration = 1800) {
+function animateCounter(element, target, prefix = '', suffix = '', duration = 1000) {
   let start = 0;
   let startTimestamp = null;
   const step = (timestamp) => {
@@ -42,5 +42,20 @@ function animateCountersOnView() {
   window.addEventListener('scroll', onScroll);
   onScroll();
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+  const track = document.querySelector('.carousel-track');
+  const leftBtn = document.querySelector('.carousel-arrow.left');
+  const rightBtn = document.querySelector('.carousel-arrow.right');
+  if (track && leftBtn && rightBtn) {
+    const imgWidth = track.querySelector('img') ? track.querySelector('img').offsetWidth + 24 : 260 + 24; // 24px gap
+    leftBtn.addEventListener('click', () => {
+      track.scrollBy({ left: -imgWidth, behavior: 'smooth' });
+    });
+    rightBtn.addEventListener('click', () => {
+      track.scrollBy({ left: imgWidth, behavior: 'smooth' });
+    });
+  }
+});
 
 document.addEventListener('DOMContentLoaded', animateCountersOnView); 
