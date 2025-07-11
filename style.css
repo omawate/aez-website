@@ -10,7 +10,8 @@ body {
   background-size: cover;
   position: relative;
 }
-body::before {
+
+.landing-page::before {
   content: "";
   position: absolute;
   top: 0;
@@ -679,6 +680,11 @@ body::before {
   min-height: 50vh;
   height: calc(100vh - 50vh);
   background: #fff;
+}
+
+body[data-page="coffeechats"] .brothers-hero-bg, body.coffeechats-page .brothers-hero-bg {
+  background: url('https://cdn.prod.website-files.com/6374140cc01b132d1cad9d00/6797d5f46fa9f74401593946_IMG_4045.JPG') 60% 40% no-repeat;
+  background-size: cover;
 }
 
 @media (max-width: 600px) {
