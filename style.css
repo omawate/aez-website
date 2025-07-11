@@ -17,7 +17,7 @@ body::before {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.60); /* dark overlay */
+  background: rgba(0, 0, 0, 0.65); /* dark overlay, more black-tinted and 50% darker */
   z-index: 0;
   pointer-events: none;
 }
