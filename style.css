@@ -588,7 +588,7 @@ body {
 .brothers-hero-container {
   position: relative;
   width: 100vw;
-  height: 50vh;
+  height: 60vh;
   min-height: 310px;
   max-height: 650px;
   overflow: hidden;
@@ -643,7 +643,7 @@ body {
   justify-content: center;
   z-index: 2;
   pointer-events: none;
-  transform: translateY(15%);
+  transform: translateY(25%);
 }
 .brothers-main-title {
   font-family: 'Montserrat', Arial, sans-serif;
@@ -677,24 +677,26 @@ body {
 }
 .brothers-white-bottom {
   width: 100vw;
-  min-height: 50vh;
-  height: calc(100vh - 50vh);
+  min-height: 40vh;
+  height: calc(100vh - 60vh);
   background: #fff;
 }
 
-body[data-page="coffeechats"] .brothers-hero-bg, body.coffeechats-page .brothers-hero-bg {
-  background: url('https://cdn.prod.website-files.com/6374140cc01b132d1cad9d00/6797d5f46fa9f74401593946_IMG_4045.JPG') 60% 40% no-repeat;
+body[data-page="alumni"], body.alumni-page {
+}
+body[data-page="alumni"] .brothers-hero-bg, body.alumni-page .brothers-hero-bg {
+  background: url('2M0A4026.jpg') center 45% no-repeat;
   background-size: cover;
 }
 
 @media (max-width: 600px) {
   .brothers-hero-container {
-    height: 34vh;
+    height: 40.8vh;
     min-height: 120px;
   }
   .brothers-white-bottom {
-    min-height: 66vh;
-    height: calc(100vh - 34vh);
+    min-height: 59.2vh;
+    height: calc(100vh - 40.8vh);
   }
   .brothers-hero-container .logo-link {
     top: 12px;
