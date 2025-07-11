@@ -582,3 +582,129 @@ body::before {
   padding: 0;
   margin: 0;
 } 
+
+/* Brothers page hero container and background */
+.brothers-hero-container {
+  position: relative;
+  width: 100vw;
+  height: 50vh;
+  min-height: 310px;
+  max-height: 650px;
+  overflow: hidden;
+  background: transparent;
+}
+.brothers-hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100%;
+  background: url('https://cdn.prod.website-files.com/6374140cc01b132d1cad9d00/6823aaf1004bb33963502321_2M0A0516.jpg') no-repeat 40% 68.75%;
+  background-size: 120%;
+  z-index: 0;
+}
+.brothers-hero-bg::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100%;
+  background: rgba(0,0,0,0.65);
+  z-index: 1;
+  pointer-events: none;
+}
+.brothers-hero-container .logo-link,
+.brothers-hero-container .main-nav {
+  position: absolute;
+  z-index: 2;
+}
+.brothers-hero-container .logo-link {
+  top: 32px;
+  left: 32px;
+}
+.brothers-hero-container .main-nav {
+  top: 32px;
+  right: 40px;
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+.brothers-text-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  pointer-events: none;
+  transform: translateY(15%);
+}
+.brothers-main-title {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 2.5vw;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: #fff;
+  text-transform: none;
+  margin-bottom: 0.1rem;
+  line-height: 1.2;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  text-align: center;
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: auto;
+  opacity: 0;
+  animation: fadeInUp 1.1s 0.1s cubic-bezier(.23,1.01,.32,1) forwards;
+}
+.brothers-subtitle {
+  font-family: 'Montserrat', Arial, sans-serif;
+  color: #fff;
+  font-size: 1vw;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  margin-top: 0;
+  line-height: 1.2;
+  text-shadow: 0 1px 6px rgba(0,0,0,0.25);
+  text-align: center;
+  opacity: 0;
+  animation: fadeInUp 1.2s 0.4s cubic-bezier(.23,1.01,.32,1) forwards;
+}
+.brothers-white-bottom {
+  width: 100vw;
+  min-height: 50vh;
+  height: calc(100vh - 50vh);
+  background: #fff;
+}
+
+@media (max-width: 600px) {
+  .brothers-hero-container {
+    height: 34vh;
+    min-height: 120px;
+  }
+  .brothers-white-bottom {
+    min-height: 66vh;
+    height: calc(100vh - 34vh);
+  }
+  .brothers-hero-container .logo-link {
+    top: 12px;
+    left: 12px;
+  }
+  .brothers-hero-container .main-nav {
+    top: 12px;
+    right: 12px;
+    gap: 0.7rem;
+    padding: 4px 8px;
+  }
+  .brothers-main-title {
+    font-size: 1.3rem;
+    margin-bottom: 0.12rem;
+  }
+  .brothers-subtitle {
+    font-size: 0.7rem;
+  }
+} 
