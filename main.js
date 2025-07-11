@@ -48,18 +48,37 @@ document.addEventListener('DOMContentLoaded', function() {
   const leftBtn = document.querySelector('.carousel-arrow.left');
   const rightBtn = document.querySelector('.carousel-arrow.right');
   if (track && leftBtn && rightBtn) {
-    const images = Array.from(track.children);
+    let images = Array.from(track.children);
     const imgCount = images.length;
-    const imgWidth = images[0].offsetWidth + parseInt(getComputedStyle(track).gap) || 0;
+    const visibleCount = 1; // always one image centered
+    const cloneCount = 2; // for smooth infinite loop
 
-    // Clone first and last images for infinite effect
-    images.slice(0, 2).forEach(img => track.appendChild(img.cloneNode(true)));
-    images.slice(-2).forEach(img => track.insertBefore(img.cloneNode(true), track.firstChild));
+    // Remove any previous clones
+    images.forEach(img => {
+      if (img.classList.contains('clone')) img.remove();
+    });
+    images = Array.from(track.children);
 
-    // Set initial scroll position to the first real image
-    let currentIndex = 2;
+    // Clone last N and first N images for infinite effect
+    for (let i = 0; i < cloneCount; i++) {
+      const firstClone = images[i].cloneNode(true);
+      firstClone.classList.add('clone');
+      track.appendChild(firstClone);
+      const lastClone = images[images.length - 1 - i].cloneNode(true);
+      lastClone.classList.add('clone');
+      track.insertBefore(lastClone, track.firstChild);
+    }
+
+    images = Array.from(track.children);
+    const total = images.length;
+    const imgWidth = images[cloneCount].offsetWidth + parseInt(getComputedStyle(track).gap) || 0;
+
+    // Set initial scroll position to the first real image centered
+    let currentIndex = cloneCount;
     function scrollToIndex(index, behavior = 'auto') {
-      const scrollLeft = index * imgWidth;
+      const container = track.parentElement;
+      const containerWidth = container.offsetWidth;
+      const scrollLeft = index * imgWidth - (containerWidth - imgWidth) / 2;
       track.scrollTo({ left: scrollLeft, behavior });
     }
     scrollToIndex(currentIndex);
@@ -67,22 +86,22 @@ document.addEventListener('DOMContentLoaded', function() {
     leftBtn.addEventListener('click', () => {
       currentIndex--;
       scrollToIndex(currentIndex, 'smooth');
-      if (currentIndex === 0) {
-        setTimeout(() => {
-          currentIndex = imgCount;
+      setTimeout(() => {
+        if (currentIndex < cloneCount) {
+          currentIndex = imgCount + cloneCount - 1;
           scrollToIndex(currentIndex);
-        }, 350);
-      }
+        }
+      }, 400);
     });
     rightBtn.addEventListener('click', () => {
       currentIndex++;
       scrollToIndex(currentIndex, 'smooth');
-      if (currentIndex === imgCount + 1) {
-        setTimeout(() => {
-          currentIndex = 1;
+      setTimeout(() => {
+        if (currentIndex >= imgCount + cloneCount) {
+          currentIndex = cloneCount;
           scrollToIndex(currentIndex);
-        }, 350);
-      }
+        }
+      }, 400);
     });
 
     // Center the carousel on resize
