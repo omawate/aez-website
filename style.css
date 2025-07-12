@@ -738,7 +738,7 @@ body[data-page="coffeechats"] .brothers-hero-bg, body.coffeechats-page .brothers
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 32px 0 64px 0;
+  padding: 32px 0 32px 0;
 }
 .alumni-destinations-title {
   font-family: 'Playfair Display', serif;
@@ -768,7 +768,7 @@ body[data-page="coffeechats"] .brothers-hero-bg, body.coffeechats-page .brothers
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 48px 0 64px 0;
+  padding: 24px 0 64px 0;
 }
 .alumni-table-title {
   font-family: 'Playfair Display', serif;
