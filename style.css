@@ -871,3 +871,104 @@ body[data-page="coffeechats"] .brothers-hero-bg, body.coffeechats-page .brothers
   padding: 0 2rem;
   text-align: left;
 } 
+
+.executive-board-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 3rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.executive-profile {
+  /* background: #111; */
+  background: none;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.10);
+  max-width: 350px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1.2rem 1.5rem 1.2rem;
+  color: #fff;
+}
+
+.executive-profile .executive-name,
+.executive-profile .executive-title,
+.executive-profile .executive-bio,
+.executive-profile .executive-contact {
+  color: #181818;
+}
+
+.executive-headshot {
+  width: 100%;
+  max-width: 350px;
+  height: auto;
+  margin-bottom: 1.2rem;
+  object-fit: cover;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+}
+
+.executive-info {
+  width: 100%;
+  text-align: left;
+}
+
+.executive-name {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.2rem;
+}
+
+.executive-title {
+  font-family: 'Bodoni Moda', serif;
+  font-size: 1rem;
+  font-style: italic;
+  font-weight: 400;
+  color: #181818;
+  margin-bottom: 0.7rem;
+  margin-top: 0.5rem;
+  letter-spacing: 0.01em;
+  line-height: 1.15;
+}
+
+.executive-bio {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 0.67rem;
+  color: #181818;
+  margin-bottom: 0.7rem;
+  line-height: 1.5;
+}
+
+.executive-contact {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 0.67rem;
+  color: #181818;
+  margin-top: 0.2rem;
+  word-break: break-all;
+}
+
+@media (max-width: 1100px) {
+  .executive-board-container {
+    gap: 2rem;
+  }
+  .executive-profile {
+    max-width: 320px;
+    padding: 1.5rem 0.7rem 1.2rem 0.7rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .executive-board-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;
+  }
+  .executive-profile {
+    max-width: 400px;
+    width: 100%;
+  }
+} 
