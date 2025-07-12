@@ -129,7 +129,7 @@ body {
 }
 
 .main-nav a:hover {
-  color: #800020;
+  color: #fff;
   background: none;
   border-radius: 0;
 }
@@ -168,7 +168,7 @@ body {
 }
 
 .nav-icon:hover {
-  color: #800020;
+  color: #fff;
 }
 
 .nav-icon svg {
@@ -188,7 +188,7 @@ body {
 }
 
 .nav-icon:hover .instagram-img {
-  filter: brightness(0) invert(0.3) sepia(1) hue-rotate(-30deg) saturate(5);
+  filter: brightness(0) invert(1);
 }
 
 .linkedin-img {
@@ -452,8 +452,8 @@ body {
 }
 
 .dropdown-menu a:hover {
-  background: #181818;
-  color: #800020;
+  background: none;
+  color: #fff;
 } 
 
 .carousel-section {
@@ -686,6 +686,20 @@ body[data-page="alumni"], body.alumni-page {
 }
 body[data-page="alumni"] .brothers-hero-bg, body.alumni-page .brothers-hero-bg {
   background: url('2M0A4026.jpg') center 45% no-repeat;
+  background-size: cover;
+}
+
+body[data-page="timeline"], body.timeline-page {
+}
+body[data-page="timeline"] .brothers-hero-bg, body.timeline-page .brothers-hero-bg {
+  background: url('https://cdn.prod.website-files.com/6374140cc01b132d1cad9d00/65b5e02ec28cd4c194b82f8a_rush_page.jpeg') center center no-repeat;
+  background-size: cover;
+}
+
+body[data-page="coffeechats"], body.coffeechats-page {
+}
+body[data-page="coffeechats"] .brothers-hero-bg, body.coffeechats-page .brothers-hero-bg {
+  background: url('https://cdn.prod.website-files.com/6374140cc01b132d1cad9d00/6797d5f46fa9f74401593946_IMG_4045.JPG') 55% 21% no-repeat;
   background-size: cover;
 }
 
