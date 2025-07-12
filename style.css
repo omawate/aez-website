@@ -809,16 +809,17 @@ body[data-page="coffeechats"] .brothers-hero-bg, body.coffeechats-page .brothers
   background: #fff;
   font-size: 1.13rem;
 }
+.alumni-table tr {
+  border-bottom: 1px solid #ccc;
+}
 .alumni-table td {
   font-weight: 400;
   text-align: left;
   padding: 0.7rem 0.7rem 0.7rem 0.7rem;
-  border-bottom: 1px solid #e5e5e5;
   background: #fff;
   font-size: 0.74rem;
 }
 .alumni-table tr:last-child td {
-  border-bottom: none;
 } 
 
 .alumni-table-subsection td {
@@ -827,7 +828,6 @@ body[data-page="coffeechats"] .brothers-hero-bg, body.coffeechats-page .brothers
   font-weight: 600;
   color: #222;
   background: #fff;
-  border-bottom: 1px solid #e5e5e5;
   padding: 1.1rem 0.7rem 0.5rem 0.7rem;
   text-align: left;
   letter-spacing: 0.01em;
