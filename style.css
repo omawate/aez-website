@@ -760,3 +760,75 @@ body[data-page="coffeechats"] .brothers-hero-bg, body.coffeechats-page .brothers
   box-shadow: 0 4px 32px rgba(0,0,0,0.10);
   background: #eee;
 } 
+
+.alumni-table-section {
+  width: 100vw;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 0 64px 0;
+}
+.alumni-table-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.1rem;
+  font-weight: 700;
+  margin-bottom: 2.2rem;
+  color: #1a1a1a;
+  letter-spacing: 0.01em;
+  line-height: 1.15;
+  text-align: center;
+}
+.alumni-table-wrapper {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 1.2rem;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.04);
+  padding: 0 1.5rem;
+}
+.alumni-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 1.13rem;
+  color: #181818;
+  background: #fff;
+  table-layout: fixed;
+}
+.alumni-table th, .alumni-table td {
+  width: 33.33%;
+}
+.alumni-table th {
+  font-weight: 700;
+  text-align: left;
+  padding: 1.1rem 0.7rem 1.1rem 0.7rem;
+  border-bottom: 4px solid #ccc;
+  background: #fff;
+  font-size: 1.13rem;
+}
+.alumni-table td {
+  font-weight: 400;
+  text-align: left;
+  padding: 0.7rem 0.7rem 0.7rem 0.7rem;
+  border-bottom: 1px solid #e5e5e5;
+  background: #fff;
+  font-size: 0.74rem;
+}
+.alumni-table tr:last-child td {
+  border-bottom: none;
+} 
+
+.alumni-table-subsection td {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 0.79rem;
+  font-weight: 600;
+  color: #222;
+  background: #fff;
+  border-bottom: 1px solid #e5e5e5;
+  padding: 1.1rem 0.7rem 0.5rem 0.7rem;
+  text-align: left;
+  letter-spacing: 0.01em;
+} 
