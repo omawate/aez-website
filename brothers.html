@@ -25,6 +25,14 @@
       background: #fff;
       position: relative;
     }
+    /* Ensure Abhinav's image matches obp.png dimensions exactly */
+    .abhinav-headshot {
+      width: 100% !important;
+      max-width: 350px !important;
+      height: 250px !important; /* Even more reduced height to crop aggressively */
+      object-fit: cover !important;
+      object-position: center 25% !important; /* Position to focus on the face area */
+    }
   </style>
 </head>
 <body>
@@ -206,7 +214,7 @@
         </div>
       </div>
       <div class="executive-profile">
-        <img class="executive-headshot" src="obp.png" alt="Executive Headshot" />
+        <img class="executive-headshot abhinav-headshot" src="https://cdn.prod.website-files.com/6374140cc01b132d1cad9d00/68239aeb2b854c5d3679621b_Screenshot%202025-05-13%20at%2012.16.49%E2%80%AFPM.png" alt="Executive Headshot" />
         <div class="executive-info">
           <div class="executive-name">Abhinav Mukkamala</div>
           <div class="executive-title" style="margin-top:0.5rem;"><em>Alpha Beta</em></div>

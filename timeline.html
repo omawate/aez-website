@@ -25,43 +25,51 @@
       background: #fff;
       position: relative;
     }
+    /* Ensure main content fills viewport and footer sits at bottom */
+    .main-content {
+      min-height: calc(100vh - 6rem);
+      display: flex;
+      flex-direction: column;
+    }
   </style>
 </head>
 <body class="timeline-page">
-  <div class="brothers-hero-container">
-    <div class="brothers-hero-bg"></div>
-    <a href="index.html" class="logo-link">
-      <img src="https://cdn.prod.website-files.com/6374140cc01b132d1cad9d00/63741e15608f0b87b4561559_final_logo-2.png" alt="Fraternity Logo" class="frat-logo" />
-    </a>
-    <nav class="main-nav">
-      <a href="brothers.html">Brothers</a>
-      <a href="alumni.html">Alumni</a>
-      <a href="#paradigm">Paradigm</a>
-      <a href="https://www.berkeleyinnovate.com/" target="_blank">Innovate</a>
-      <div class="nav-dropdown">
-        <a href="#join" class="join-link">Join Us</a>
-        <div class="dropdown-menu">
-          <a href="timeline.html">Timeline</a>
-          <a href="coffeechats.html">Coffee Chats</a>
-          <a href="https://airtable.com/appyWVJTerxEykO4A/pagzqgUqNe5oEKFy7/form" target="_blank">Application</a>
+  <main class="main-content">
+    <div class="brothers-hero-container">
+      <div class="brothers-hero-bg"></div>
+      <a href="index.html" class="logo-link">
+        <img src="https://cdn.prod.website-files.com/6374140cc01b132d1cad9d00/63741e15608f0b87b4561559_final_logo-2.png" alt="Fraternity Logo" class="frat-logo" />
+      </a>
+      <nav class="main-nav">
+        <a href="brothers.html">Brothers</a>
+        <a href="alumni.html">Alumni</a>
+        <a href="#paradigm">Paradigm</a>
+        <a href="https://www.berkeleyinnovate.com/" target="_blank">Innovate</a>
+        <div class="nav-dropdown">
+          <a href="#join" class="join-link">Join Us</a>
+          <div class="dropdown-menu">
+            <a href="timeline.html">Timeline</a>
+            <a href="coffeechats.html">Coffee Chats</a>
+            <a href="https://airtable.com/appyWVJTerxEykO4A/pagzqgUqNe5oEKFy7/form" target="_blank">Application</a>
+          </div>
         </div>
+        <a href="https://www.instagram.com/aezberkeley/" target="_blank" aria-label="Instagram" class="nav-icon instagram">
+          <img src="instagram.png" alt="Instagram" class="instagram-img" />
+        </a>
+        <a href="https://www.linkedin.com/company/alpha-epsilon-zeta/" target="_blank" aria-label="LinkedIn" class="nav-icon">
+          <img src="linkedin.png" alt="LinkedIn" class="linkedin-img" />
+        </a>
+      </nav>
+      <div class="brothers-text-overlay">
+        <h1 class="brothers-main-title">Rush</h1>
+        <p class="brothers-subtitle">Join us at rush to learn more about the organization</p>
       </div>
-      <a href="https://www.instagram.com/aezberkeley/" target="_blank" aria-label="Instagram" class="nav-icon instagram">
-        <img src="instagram.png" alt="Instagram" class="instagram-img" />
-      </a>
-      <a href="https://www.linkedin.com/company/alpha-epsilon-zeta/" target="_blank" aria-label="LinkedIn" class="nav-icon">
-        <img src="linkedin.png" alt="LinkedIn" class="linkedin-img" />
-      </a>
-    </nav>
-    <div class="brothers-text-overlay">
-      <h1 class="brothers-main-title">Rush</h1>
-      <p class="brothers-subtitle">Join us at rush to learn more about the organization</p>
     </div>
-  </div>
-  <section class="alumni-destinations-section">
-    <h2 class="alumni-destinations-title">Spring Rush 2025</h2>
-    <p class="coffee-chats-closed-message">Alpha Epsilon Zeta's recruitment process is an inclusive series of events open to all prospective members. These events are designed to foster mutual connections between our brothers and potential members. Our organization is proud of its diversity in intellectual passions and pursuits and we value innovative perspectives. We encourage all our members to bring their unique ideas to our organizations' professional and social endeavors.</p>
-  </section>
+    <section class="alumni-destinations-section">
+      <h2 class="alumni-destinations-title">Spring Rush 2025</h2>
+      <p class="coffee-chats-closed-message">Alpha Epsilon Zeta's recruitment process is an inclusive series of events open to all prospective members. These events are designed to foster mutual connections between our brothers and potential members. Our organization is proud of its diversity in intellectual passions and pursuits and we value innovative perspectives. We encourage all our members to bring their unique ideas to our organizations' professional and social endeavors.</p>
+    </section>
+  </main>
   <footer class="site-footer">
     <div class="footer-icons">
       <a href="https://www.instagram.com/aezberkeley/" target="_blank" aria-label="Instagram" class="footer-icon">
