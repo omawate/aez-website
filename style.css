@@ -303,7 +303,7 @@ body {
 }
 
 .counter-number {
-  font-family: 'Montserrat', Arial, sans-serif;
+  font-family: 'Libre Baskerville', serif;
   font-size: 3.2rem;
   font-weight: 900;
   color: #181818;
@@ -317,7 +317,7 @@ body {
 }
 
 .counter-label {
-  font-family: 'Montserrat', Arial, sans-serif;
+  font-family: 'Libre Baskerville', serif;
   font-size: 1.15rem;
   color: #222;
   text-align: center;
