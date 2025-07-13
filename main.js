@@ -109,4 +109,51 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
-document.addEventListener('DOMContentLoaded', animateCountersOnView); 
+document.addEventListener('DOMContentLoaded', animateCountersOnView);
+
+// Slideshow functionality
+let currentSlide = 0;
+const slides = document.querySelectorAll('.slide');
+const track = document.querySelector('.slideshow-track');
+
+function showSlide(n) {
+  // Calculate the correct slide index
+  currentSlide = (n + slides.length) % slides.length;
+  
+  // Each slide is 40% width, so to center, offset by 30%
+  const slideWidth = 40;
+  const translateX = -(currentSlide * slideWidth) + 30;
+  
+  // Apply the transform to move the track
+  if (track) {
+    track.style.transform = `translateX(${translateX}%)`;
+  }
+  
+  // Update active states
+  slides.forEach((slide, index) => {
+    slide.classList.remove('active');
+    if (index === currentSlide) {
+      slide.classList.add('active');
+    }
+  });
+}
+
+function changeSlide(direction) {
+  showSlide(currentSlide + direction);
+}
+
+// Initialize slideshow
+document.addEventListener('DOMContentLoaded', function() {
+  if (slides.length > 0) {
+    showSlide(0);
+  }
+});
+
+// Add keyboard navigation
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'ArrowLeft') {
+    changeSlide(-1);
+  } else if (e.key === 'ArrowRight') {
+    changeSlide(1);
+  }
+}); 
