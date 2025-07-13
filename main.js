@@ -112,24 +112,34 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('DOMContentLoaded', animateCountersOnView);
 
 // Slideshow functionality
-let currentSlide = 0;
+let currentSlide = 1; // Start at the first real image
 const slides = document.querySelectorAll('.slide');
 const track = document.querySelector('.slideshow-track');
 
 function showSlide(n) {
-  // Calculate the correct slide index
-  currentSlide = (n + slides.length) % slides.length;
-  
-  // Each slide is 40% width, so to center, offset by 30%
-  const slideWidth = 40;
-  const translateX = -(currentSlide * slideWidth) + 30;
-  
-  // Apply the transform to move the track
+  // Only allow n from 1 to slides.length-2 (real images)
+  if (n <= 0) {
+    currentSlide = slides.length - 2;
+  } else if (n >= slides.length - 1) {
+    currentSlide = 1;
+  } else {
+    currentSlide = n;
+  }
+
+  // Calculate gap in percent
+  const container = document.querySelector('.slideshow-container');
+  const containerWidth = container ? container.offsetWidth : window.innerWidth;
+  const gapPx = containerWidth * 0.02; // 2vw in px
+  const gapPercent = (gapPx / containerWidth) * 100;
+  const slideWidth = 38;
+  const totalSlide = slideWidth + gapPercent;
+  // Center the current slide
+  const translateX = 50 - (currentSlide * totalSlide + slideWidth / 2);
+
   if (track) {
     track.style.transform = `translateX(${translateX}%)`;
   }
-  
-  // Update active states
+
   slides.forEach((slide, index) => {
     slide.classList.remove('active');
     if (index === currentSlide) {
@@ -142,14 +152,12 @@ function changeSlide(direction) {
   showSlide(currentSlide + direction);
 }
 
-// Initialize slideshow
 document.addEventListener('DOMContentLoaded', function() {
   if (slides.length > 0) {
-    showSlide(0);
+    showSlide(1);
   }
 });
 
-// Add keyboard navigation
 document.addEventListener('keydown', function(e) {
   if (e.key === 'ArrowLeft') {
     changeSlide(-1);

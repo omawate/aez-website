@@ -327,7 +327,7 @@ body {
 
 /* Slideshow Section Styles */
 .slideshow-section {
-  padding: 4rem 0;
+  padding: 4rem 0 3rem 0;
   background: #fff;
   position: relative;
   z-index: 1;
@@ -367,7 +367,7 @@ body {
 
 .slide img {
   width: 100%;
-  height: 500px;
+  height: 425px;
   object-fit: cover;
   display: block;
 }
@@ -428,7 +428,7 @@ body {
 
 @media (max-width: 900px) {
   .slide img {
-    height: 400px;
+    height: 340px;
   }
   
   .slideshow-container {
@@ -443,7 +443,7 @@ body {
 
 @media (max-width: 600px) {
   .slide img {
-    height: 300px;
+    height: 255px;
   }
   
   .slideshow-arrow {
@@ -1201,4 +1201,49 @@ body[data-page="coffeechats"] .brothers-hero-bg, body.coffeechats-page .brothers
     max-width: 320px;
     width: 100%;
   }
+} 
+
+.site-footer {
+  background: #000;
+  color: #fff;
+  text-align: center;
+  padding: 2.5rem 0 1.5rem 0;
+  margin-top: 0;
+}
+
+.footer-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem;
+  margin-bottom: 1.2rem;
+}
+
+.footer-icon img,
+.footer-icon svg {
+  height: 2.2rem;
+  width: 2.2rem;
+  filter: brightness(0) invert(1);
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.footer-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.footer-icon:hover {
+  opacity: 0.7;
+}
+
+.footer-text {
+  color: #fff;
+  font-size: 1.05rem;
+  font-family: 'Montserrat', Arial, sans-serif;
+  opacity: 0.85;
+  margin-top: 0.5rem;
 } 
