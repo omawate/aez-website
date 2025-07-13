@@ -982,13 +982,13 @@ body[data-page="coffeechats"] .brothers-hero-bg, body.coffeechats-page .brothers
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 1.2rem;
+  gap: 1.07rem;
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
 }
 
 .members-section .executive-profile {
-  max-width: 220px;
+  max-width: 260px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -999,9 +999,9 @@ body[data-page="coffeechats"] .brothers-hero-bg, body.coffeechats-page .brothers
 
 .members-section .executive-headshot {
   width: 100%;
-  max-width: 220px;
+  max-width: 260px;
   height: auto;
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.8rem;
   object-fit: cover;
   box-shadow: 0 2px 12px rgba(0,0,0,0.10);
 }
@@ -1048,10 +1048,10 @@ body[data-page="coffeechats"] .brothers-hero-bg, body.coffeechats-page .brothers
 
 @media (max-width: 1100px) {
   .members-section .executive-board-container {
-    gap: 0.8rem;
+    gap: 1.1rem;
   }
   .members-section .executive-profile {
-    max-width: 200px;
+    max-width: 240px;
     padding: 1rem 0.5rem 0.6rem 0.5rem;
   }
 }
