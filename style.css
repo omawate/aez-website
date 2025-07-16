@@ -209,14 +209,14 @@ body {
   width: 100vw;
   background: #fff;
   color: #222;
-  padding: 48px 0 48px 0; /* reduced vertical and no horizontal padding */
+  padding: 48px 0 30px 0; /* reduced vertical and no horizontal padding */
   display: flex;
   justify-content: center;
   overflow-x: hidden;
 }
 
 .info-content {
-  max-width: 1200px;
+  max-width: 1300px;
   margin: 0 auto;
   display: flex;
   flex-direction: row;
@@ -229,7 +229,7 @@ body {
 .info-text {
   flex: 1 1 0;
   min-width: 0;
-  max-width: 70%;
+  max-width: 63%; /* reduced by 10% from 70% */
   align-self: center;
 }
 
@@ -238,7 +238,7 @@ body {
 }
 
 .info-text p {
-  font-size: 1.46rem; /* 10% reduction from 1.62rem */
+  font-size: 1.314rem; /* 10% reduction from 1.46rem */
 }
 
 .info-image {
@@ -246,7 +246,7 @@ body {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  max-width: 40%;
+  max-width: 44%; /* increased by 10% from 40% */
 }
 
 .info-image img {
@@ -271,7 +271,7 @@ body {
 
 .info-section p {
   font-family: 'Montserrat', Arial, sans-serif;
-  font-size: 1.18rem;
+  font-size: 1.062rem; /* 10% reduction from 1.18rem */
   line-height: 1.85;
   color: #222;
   margin-bottom: 1.3rem;
