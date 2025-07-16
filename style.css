@@ -209,14 +209,14 @@ body {
   width: 100vw;
   background: #fff;
   color: #222;
-  padding: 60px 0 60px 0;
+  padding: 48px 0 48px 0; /* reduced vertical and no horizontal padding */
   display: flex;
   justify-content: center;
+  overflow-x: hidden;
 }
 
 .info-content {
-  max-width: 1600px;
-  width: 98vw;
+  max-width: 1100px;
   margin: 0 auto;
   display: flex;
   flex-direction: row;
@@ -234,11 +234,11 @@ body {
 }
 
 .info-text h2 {
-  font-size: 3.84rem;
+  font-size: 3.46rem; /* 10% reduction from 3.84rem */
 }
 
 .info-text p {
-  font-size: 1.62rem;
+  font-size: 1.46rem; /* 10% reduction from 1.62rem */
 }
 
 .info-image {
@@ -251,7 +251,7 @@ body {
 
 .info-image img {
   width: 100%;
-  max-width: 700px;
+  max-width: 630px; /* 10% reduction from 700px */
   height: auto;
   border-radius: 2rem;
   box-shadow: 0 4px 32px rgba(0,0,0,0.10);
