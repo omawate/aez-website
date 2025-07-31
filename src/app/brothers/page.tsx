@@ -10,7 +10,7 @@ import { Card } from '@/components/ui/Card';
 
 export default function BrothersPage() {
   const [selectedClass, setSelectedClass] = useState<string>('all');
-  const [showExecutives, setShowExecutives] = useState(true);
+  // const [showExecutives, setShowExecutives] = useState(true);
 
   const allBrothers = useMemo(() => [...executives, ...regularBrothers], []);
 
@@ -21,9 +21,9 @@ export default function BrothersPage() {
       filtered = filtered.filter(brother => brother.class === selectedClass);
     }
     
-    if (!showExecutives) {
-      filtered = filtered.filter(brother => !brother.isExecutive);
-    }
+    // if (!showExecutives) {
+    //   filtered = filtered.filter(brother => !brother.isExecutive);
+    // }
     
     return filtered.sort((a, b) => {
       // Sort by executive status first, then by class order
@@ -36,7 +36,7 @@ export default function BrothersPage() {
       
       return classA - classB;
     });
-  }, [allBrothers, selectedClass, showExecutives]);
+  }, [allBrothers, selectedClass]);
 
   const availableClasses = useMemo(() => {
     const classes = Array.from(new Set(allBrothers.map(brother => brother.class)));
@@ -87,29 +87,18 @@ export default function BrothersPage() {
                 </Button>
               ))}
             </div>
-            <div className="flex items-center gap-4">
-              <label className="flex items-center gap-2 cursor-pointer">
-                <input
-                  type="checkbox"
-                  checked={showExecutives}
-                  onChange={(e) => setShowExecutives(e.target.checked)}
-                  className="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
-                />
-                <span className="text-sm font-medium text-gray-700">Show Executive Board</span>
-              </label>
-            </div>
           </div>
 
           {/* Results Count */}
           <p className="text-gray-600 mb-8">
-            Showing {filteredBrothers.length} brother{filteredBrothers.length !== 1 ? 's' : ''}
+            {/* Showing {filteredBrothers.length} brother{filteredBrothers.length !== 1 ? 's' : ''} */}
             {selectedClass !== 'all' && ` from ${brotherClasses[selectedClass as keyof typeof brotherClasses]?.fullName || selectedClass}`}
           </p>
         </div>
       </section>
 
       {/* Executive Board Section */}
-      {showExecutives && selectedClass === 'all' && (
+      {selectedClass === 'all' && (
         <section className="py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-4xl font-playfair font-bold text-center mb-12">Executive Board</h2>
@@ -125,7 +114,7 @@ export default function BrothersPage() {
       {/* Brothers Grid */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {selectedClass === 'all' && showExecutives && (
+          {selectedClass === 'all' && (
             <h2 className="text-4xl font-playfair font-bold text-center mb-12">All Brothers</h2>
           )}
           

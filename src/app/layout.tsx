@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <head>
-        <link rel="icon" href="https://cdn.prod.website-files.com/6374140cc01b132d1cad9d00/63741e15608f0b87b4561559_final_logo-2.png" />
+        <link rel="icon" href="/favicon.ico" />
       </head>
       <body
         className={`${montserrat.variable} ${playfair.variable} font-montserrat antialiased`}

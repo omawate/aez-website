@@ -190,11 +190,7 @@ export default function AlumniPage() {
                         {alumnus.name}
                       </td>
                       <td className="px-6 py-4 text-sm text-gray-600">
-                        <span className={notableCompanies.some(notable => 
-                          alumnus.company.toLowerCase().includes(notable.toLowerCase())
-                        ) ? 'font-semibold text-blue-600' : ''}>
-                          {alumnus.company}
-                        </span>
+                        {alumnus.company}
                       </td>
                       <td className="px-6 py-4 text-sm text-gray-600">
                         {alumnus.position}
