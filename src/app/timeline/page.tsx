@@ -160,7 +160,7 @@ export default function TimelinePage() {
                         <h3 className="text-2xl font-merriweather font-bold mb-3">Applications Due</h3>
                         <div className="text-gray-600 mb-3">Location: Online Submission</div>
                         <p className="text-gray-700">
-                          Get your application in on time. Our application is a quick resume drop so make sure to apply as soon as you can.
+                          Get your application in on time. Our application is a quick resume drop so make sure to apply as soon as you can!
                         </p>
                       </div>
                     </div>
