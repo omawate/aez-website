@@ -265,7 +265,7 @@ export const regularBrothers: Brother[] = [
     id: 'arya-patel',
     name: 'Arya Patel',
     class: 'Alpha Epsilon',
-    major: 'Industrial Engineering & Operations Research',
+    major: 'IEOR',
     year: 'sophomore',
     hometown: 'Linwood, New Jersey',
     bio: 'Arya is a sophomore studying Industrial Engineering & Operations Research. He is from Linwood, New Jersey, and is a part of the Alpha Epsilon class. He is interested in pursuing a career in real estate private equity or quantitative finance. Outside of his professional interests, Arya enjoys playing tennis, collecting cologne, and listening to house music.',
