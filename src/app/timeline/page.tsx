@@ -8,7 +8,7 @@ export default function TimelinePage() {
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: 'url(https://lh3.googleusercontent.com/pw/AP1GczNeV9GeZNAIpb5tQy_nF9d2f0yvnp-f_nSmVwW-0EC-jWua6Sth5jc9oojpktckkjCAhimJuU-LV8xIXYiBsCzLzP1fP_Ko1Cg3aZ4Ne1z7tUmqn72kKv2-jYnRTvTY-vagqkNdRNLfGOJmOjfqHi0DoQ=w2626-h1750-s-no-gm)'
+            backgroundImage: 'url(https://cdn.prod.website-files.com/6374140cc01b132d1cad9d00/64b8403f97c120b90d8bfd50_DSC06251.jpg)'
           }}
         />
         <div className="absolute inset-0 bg-black/50" />
@@ -49,7 +49,7 @@ export default function TimelinePage() {
                         />
                       </div>
                       <div className="flex-1">
-                        <div className="text-[#3d0f19] font-bold text-sm mb-2">TUESDAY 08/27 | 9:00 AM - 5:00 PM</div>
+                        <div className="text-[#3d0f19] font-bold text-sm mb-2">TUESDAY 08/27</div>
                         <h3 className="text-2xl font-merriweather font-bold mb-3">Coffee Chats Begin</h3>
                         <div className="text-gray-600 mb-3">Location: Various Campus Locations</div>
                         <p className="text-gray-700">
@@ -76,9 +76,9 @@ export default function TimelinePage() {
                         />
                       </div>
                       <div className="flex-1">
-                        <div className="text-[#3d0f19] font-bold text-sm mb-2">SATURDAY 09/06 | 8:00 PM - 11:00 PM</div>
+                        <div className="text-[#3d0f19] font-bold text-sm mb-2">SATURDAY 09/06 | 9:00 PM - 12:00 PM</div>
                         <h3 className="text-2xl font-merriweather font-bold mb-3">Rush Party</h3>
-                        <div className="text-gray-600 mb-3">Location: TBD</div>
+                        <div className="text-gray-600 mb-3">Location: TBA</div>
                         <p className="text-gray-700">
                           Come out and meet the brothers in more of an informal setting. Tickets will be sold via our Instagram. Speak to us at tabling and through coffee chats for Rushee Bids.
                         </p>
@@ -102,7 +102,7 @@ export default function TimelinePage() {
                         />
                       </div>
                       <div className="flex-1">
-                        <div className="text-[#3d0f19] font-bold text-sm mb-2">MONDAY 09/08 | 7:00 PM - 8:30 PM</div>
+                        <div className="text-[#3d0f19] font-bold text-sm mb-2">MONDAY 09/08 | 8:00 PM - 9:30 PM</div>
                         <h3 className="text-2xl font-merriweather font-bold mb-3">General Infosession</h3>
                         <div className="text-gray-600 mb-3">Location: Wheeler 108</div>
                         <p className="text-gray-700">
