@@ -21,7 +21,7 @@ export default function Home() {
               Meet Our Brothers
             </Button>
             <Button
-              href="https://airtable.com/appyWVJTerxEykO4A/pagzqgUqNe5oEKFy7/form"
+              href="https://airtable.com/appoEeyrE51PL5szS/pagzqgUqNe5oEKFy7/form"
               external
               variant="outline"
               size="lg"
