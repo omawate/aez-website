@@ -6,7 +6,6 @@ import { executives, regularBrothers } from '@/data/brothers';
 import { Brother } from '@/types';
 import { brotherClasses } from '@/lib/constants';
 import { Button } from '@/components/ui/Button';
-import { Card } from '@/components/ui/Card';
 
 export default function BrothersPage() {
   const [selectedClass, setSelectedClass] = useState<string>('all');
@@ -21,21 +20,23 @@ export default function BrothersPage() {
       filtered = filtered.filter(brother => brother.class === selectedClass);
     }
     
-    // if (!showExecutives) {
-    //   filtered = filtered.filter(brother => !brother.isExecutive);
-    // }
-    
-    return filtered.sort((a, b) => {
-      // Sort by executive status first, then by class order
-      if (a.isExecutive !== b.isExecutive) {
-        return a.isExecutive ? -1 : 1;
+    const sorted = filtered.sort((a, b) => {
+      // First sort by class order
+      const classA = brotherClasses[a.class as keyof typeof brotherClasses]?.order ?? 1000;
+      const classB = brotherClasses[b.class as keyof typeof brotherClasses]?.order ?? 1000;
+      
+      if (classA !== classB) {
+        return classA - classB;
       }
       
-      const classA = brotherClasses[a.class as keyof typeof brotherClasses]?.order ?? 999;
-      const classB = brotherClasses[b.class as keyof typeof brotherClasses]?.order ?? 999;
+      // If same class, sort by last name alphabetically
+      const lastNameA = a.name.split(' ').pop() || '';
+      const lastNameB = b.name.split(' ').pop() || '';
       
-      return classA - classB;
+      return lastNameA.localeCompare(lastNameB);
     });
+    
+    return sorted;
   }, [allBrothers, selectedClass]);
 
   const availableClasses = useMemo(() => {
@@ -59,21 +60,22 @@ export default function BrothersPage() {
         />
         <div className="absolute inset-0 bg-black/50" />
         <div className="relative z-10 text-center text-white">
-          <h1 className="text-6xl md:text-8xl font-playfair font-bold mb-4">Brothers</h1>
-          <p className="text-xl md:text-2xl font-montserrat max-w-2xl mx-auto px-4">
-            Meet the driven individuals who make up Alpha Epsilon Zeta
-          </p>
+          <h1 className="text-6xl md:text-8xl font-merriweather font-bold mb-4">Brothers</h1>
+                      <p className="text-xl md:text-2xl font-inter max-w-2xl mx-auto px-4">
+              Meet the driven individuals who make up Alpha Epsilon Zeta
+            </p>
         </div>
       </section>
 
       {/* Filters Section */}
       <section className="py-12 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row gap-6 items-center justify-between mb-8">
-            <div className="flex flex-wrap gap-3">
+          <div className="flex flex-col md:flex-row gap-6 items-center justify-center mb-8">
+            <div className="flex flex-wrap gap-3 justify-center">
               <Button
                 variant={selectedClass === 'all' ? 'primary' : 'outline'}
                 onClick={() => setSelectedClass('all')}
+                className={selectedClass === 'all' ? 'bg-[#3d0f19] hover:bg-[#2a0a12] border-[#3d0f19]' : ''}
               >
                 All Classes
               </Button>
@@ -82,6 +84,7 @@ export default function BrothersPage() {
                   key={className}
                   variant={selectedClass === className ? 'primary' : 'outline'}
                   onClick={() => setSelectedClass(className)}
+                  className={selectedClass === className ? 'bg-[#3d0f19] hover:bg-[#2a0a12] border-[#3d0f19]' : ''}
                 >
                   {brotherClasses[className as keyof typeof brotherClasses]?.fullName || className}
                 </Button>
@@ -89,22 +92,18 @@ export default function BrothersPage() {
             </div>
           </div>
 
-          {/* Results Count */}
-          <p className="text-gray-600 mb-8">
-            {/* Showing {filteredBrothers.length} brother{filteredBrothers.length !== 1 ? 's' : ''} */}
-            {selectedClass !== 'all' && ` from ${brotherClasses[selectedClass as keyof typeof brotherClasses]?.fullName || selectedClass}`}
-          </p>
+
         </div>
       </section>
 
       {/* Executive Board Section */}
       {selectedClass === 'all' && (
-        <section className="py-16">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-4xl font-playfair font-bold text-center mb-12">Executive Board</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+        <section className="py-16 bg-gray-50">
+          <div className="max-w-7xl mx-auto px-1 sm:px-2 lg:px-3">
+            <h2 className="text-4xl font-merriweather font-bold text-center mb-12">Executive Board</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
               {executives.map((brother) => (
-                <BrotherCard key={brother.id} brother={brother} />
+                <BrotherCard key={brother.id} brother={brother} showExecutiveTag={true} />
               ))}
             </div>
           </div>
@@ -112,17 +111,17 @@ export default function BrothersPage() {
       )}
 
       {/* Brothers Grid */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-16">
+        <div className="max-w-7xl mx-auto px-1 sm:px-2 lg:px-3">
           {selectedClass === 'all' && (
-            <h2 className="text-4xl font-playfair font-bold text-center mb-12">All Brothers</h2>
+            <h2 className="text-4xl font-merriweather font-bold text-center mb-12">All Brothers</h2>
           )}
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-            {filteredBrothers.map((brother) => (
-              <BrotherCard key={brother.id} brother={brother} />
-            ))}
-          </div>
+                      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+              {filteredBrothers.map((brother) => (
+                <BrotherCard key={brother.id} brother={brother} showExecutiveTag={false} />
+              ))}
+            </div>
         </div>
       </section>
     </div>
@@ -131,11 +130,12 @@ export default function BrothersPage() {
 
 interface BrotherCardProps {
   brother: Brother;
+  showExecutiveTag: boolean;
 }
 
-function BrotherCard({ brother }: BrotherCardProps) {
+function BrotherCard({ brother, showExecutiveTag }: BrotherCardProps) {
   return (
-    <Card className="overflow-hidden hover:shadow-lg transition-shadow duration-300">
+    <div className="overflow-hidden">
       <div className="relative aspect-[3/4] overflow-hidden">
         <Image
           src={brother.image}
@@ -144,41 +144,25 @@ function BrotherCard({ brother }: BrotherCardProps) {
           className="object-cover transition-transform duration-300 hover:scale-105"
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
         />
-        {brother.isExecutive && brother.executiveRole && (
-          <div className="absolute top-3 left-3 bg-blue-600 text-white px-2 py-1 rounded-full text-xs font-medium">
-            {brother.executiveRole}
-          </div>
-        )}
       </div>
       
-      <div className="p-6">
-        <h3 className="text-xl font-playfair font-bold mb-2">{brother.name}</h3>
+      <div className="p-2">
+        <h3 className="text-xl font-merriweather font-bold mb-2">{brother.name}</h3>
+        {showExecutiveTag && brother.isExecutive && brother.executiveRole && (
+          <div className="mb-2">
+            <span className="text-white px-2 py-1 rounded-full text-xs font-medium" style={{ backgroundColor: '#3d0f19' }}>
+              {brother.executiveRole}
+            </span>
+          </div>
+        )}
         <div className="space-y-2 text-sm text-gray-600 mb-4">
-          <p className="font-medium">{brother.class} • {brother.year}</p>
+          <p className="font-medium">{brother.class}</p>
           <p>{brother.major}</p>
           <p>{brother.hometown}</p>
         </div>
         
-        <p className="text-sm text-gray-700 mb-4 line-clamp-4">{brother.bio}</p>
-        
-        {brother.interests && brother.interests.length > 0 && (
-          <div className="flex flex-wrap gap-1">
-            {brother.interests.slice(0, 3).map((interest, index) => (
-              <span
-                key={index}
-                className="inline-block bg-gray-100 text-gray-700 px-2 py-1 rounded-full text-xs"
-              >
-                {interest}
-              </span>
-            ))}
-            {brother.interests.length > 3 && (
-              <span className="inline-block bg-gray-100 text-gray-700 px-2 py-1 rounded-full text-xs">
-                +{brother.interests.length - 3} more
-              </span>
-            )}
-          </div>
-        )}
+        <p className="text-sm text-gray-700">{brother.bio}</p>
       </div>
-    </Card>
+    </div>
   );
 }

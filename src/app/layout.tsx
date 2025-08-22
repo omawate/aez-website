@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { montserrat, playfair } from "@/lib/fonts";
+import { inter, merriweather } from "@/lib/fonts";
 import { generateMetadata } from "@/lib/metadata";
 import { Header, Footer } from "@/components/layout";
 import "./globals.css";
@@ -21,7 +21,7 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" />
       </head>
       <body
-        className={`${montserrat.variable} ${playfair.variable} font-montserrat antialiased`}
+        className={`${inter.variable} ${merriweather.variable} font-inter antialiased`}
       >
         <Header transparent fixed />
         <div className="min-h-screen">

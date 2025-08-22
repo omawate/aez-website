@@ -1,22 +1,6 @@
-import { Montserrat, Playfair_Display, Inter } from 'next/font/google';
+import { Inter, Merriweather } from 'next/font/google';
 
 // Primary font for body text and UI
-export const montserrat = Montserrat({
-  subsets: ['latin'],
-  variable: '--font-montserrat',
-  weight: ['300', '400', '500', '600', '700', '800', '900'],
-  display: 'swap',
-});
-
-// Secondary font for headings and emphasis
-export const playfair = Playfair_Display({
-  subsets: ['latin'],
-  variable: '--font-playfair',
-  weight: ['400', '500', '600', '700', '800', '900'],
-  display: 'swap',
-});
-
-// Fallback system font
 export const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
@@ -24,25 +8,33 @@ export const inter = Inter({
   display: 'swap',
 });
 
+// Secondary font for headings and emphasis
+export const merriweather = Merriweather({
+  subsets: ['latin'],
+  variable: '--font-merriweather',
+  weight: ['300', '400', '700', '900'],
+  display: 'swap',
+});
+
 // Font combinations for different use cases
 export const fontClasses = {
   // Headings
-  heading: 'font-playfair font-bold tracking-tight',
-  subheading: 'font-montserrat font-semibold',
+  heading: 'font-merriweather font-bold tracking-tight',
+  subheading: 'font-inter font-semibold',
   
   // Body text
-  body: 'font-montserrat font-normal',
-  bodyLarge: 'font-montserrat font-normal text-lg',
+  body: 'font-inter font-normal',
+  bodyLarge: 'font-inter font-normal text-lg',
   
   // UI elements
-  ui: 'font-montserrat font-medium',
-  button: 'font-montserrat font-semibold tracking-wide',
-  nav: 'font-montserrat font-medium',
+  ui: 'font-inter font-medium',
+  button: 'font-inter font-semibold tracking-wide',
+  nav: 'font-inter font-medium',
   
   // Special cases
-  hero: 'font-montserrat font-black tracking-tight',
-  accent: 'font-playfair font-semibold italic',
+  hero: 'font-inter font-black tracking-tight',
+  accent: 'font-merriweather font-semibold italic',
   
   // Executive roles (special typography)
-  executive: 'font-playfair font-medium italic',
+  executive: 'font-merriweather font-medium italic',
 } as const;

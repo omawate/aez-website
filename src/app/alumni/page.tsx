@@ -1,13 +1,11 @@
 'use client';
 
 import { useState, useMemo } from 'react';
-import Image from 'next/image';
-import { alumni, alumniByClass, uniqueCompanies, notableCompanies } from '@/data/alumni';
+import { alumni, alumniByClass } from '@/data/alumni';
 import { Button } from '@/components/ui/Button';
-import { Card } from '@/components/ui/Card';
+
 
 export default function AlumniPage() {
-  const [searchTerm, setSearchTerm] = useState('');
   const [selectedClass, setSelectedClass] = useState<string>('all');
 
   const filteredAlumni = useMemo(() => {
@@ -17,17 +15,8 @@ export default function AlumniPage() {
       filtered = filtered.filter(alumnus => alumnus.class === selectedClass);
     }
     
-    if (searchTerm) {
-      const term = searchTerm.toLowerCase();
-      filtered = filtered.filter(alumnus => 
-        alumnus.name.toLowerCase().includes(term) ||
-        alumnus.company.toLowerCase().includes(term) ||
-        alumnus.position.toLowerCase().includes(term)
-      );
-    }
-    
     return filtered;
-  }, [searchTerm, selectedClass]);
+  }, [selectedClass]);
 
   const availableClasses = useMemo(() => {
     const classes = Object.keys(alumniByClass);
@@ -45,23 +34,7 @@ export default function AlumniPage() {
     });
   }, []);
 
-  const stats = useMemo(() => {
-    const companiesWithNotable = alumni.filter(a => 
-      notableCompanies.some(notable => a.company.toLowerCase().includes(notable.toLowerCase()))
-    );
-    
-    const founders = alumni.filter(a => 
-      a.position.toLowerCase().includes('founder') || 
-      a.position.toLowerCase().includes('ceo')
-    );
 
-    return {
-      totalAlumni: alumni.length,
-      uniqueCompanies: uniqueCompanies.length,
-      notableCompanies: companiesWithNotable.length,
-      founders: founders.length
-    };
-  }, []);
 
   return (
     <div className="min-h-screen">
@@ -75,73 +48,26 @@ export default function AlumniPage() {
         />
         <div className="absolute inset-0 bg-black/50" />
         <div className="relative z-10 text-center text-white">
-          <h1 className="text-6xl md:text-8xl font-playfair font-bold mb-4">Our Alumni</h1>
-          <p className="text-xl md:text-2xl font-montserrat max-w-2xl mx-auto px-4">
-            Trailblazers making their mark across industries and the world
-          </p>
+          <h1 className="text-6xl md:text-8xl font-merriweather font-bold mb-4">Our Alumni</h1>
+                      <p className="text-xl md:text-2xl font-inter max-w-2xl mx-auto px-4">
+              Our brothers have gone on to excel worldwide—in Silicon Valley tech, Wall Street finance, top graduate programs, and innovative startups
+            </p>
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div>
-              <div className="text-4xl font-bold text-blue-600 mb-2">{stats.totalAlumni}+</div>
-              <div className="text-gray-600 font-medium">Alumni Worldwide</div>
-            </div>
-            <div>
-              <div className="text-4xl font-bold text-blue-600 mb-2">{stats.uniqueCompanies}+</div>
-              <div className="text-gray-600 font-medium">Unique Companies</div>
-            </div>
-            <div>
-              <div className="text-4xl font-bold text-blue-600 mb-2">{stats.notableCompanies}+</div>
-              <div className="text-gray-600 font-medium">At Top Tech Companies</div>
-            </div>
-            <div>
-              <div className="text-4xl font-bold text-blue-600 mb-2">{stats.founders}+</div>
-              <div className="text-gray-600 font-medium">Founders & CEOs</div>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      {/* Alumni Destinations Image */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-playfair font-bold text-center mb-12">Alumni Destinations</h2>
-          <div className="max-w-4xl mx-auto">
-            <Image
-              src="https://cdn.prod.website-files.com/6374140cc01b132d1cad9d00/65b24201cf035e83b6b9f75e_Screenshot%202024-01-25%20at%203.11.29%E2%80%AFAM.jpg"
-              alt="Alumni Destinations Map"
-              width={1200}
-              height={800}
-              className="w-full h-auto rounded-lg shadow-lg"
-              priority
-            />
-          </div>
-        </div>
-      </section>
 
-      {/* Search and Filter Section */}
+
+
+      {/* Class Filter Section */}
       <section className="py-12 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Search Bar */}
-          <div className="mb-8">
-            <input
-              type="text"
-              placeholder="Search by name, company, or position..."
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full max-w-md mx-auto block px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-            />
-          </div>
-
           {/* Class Filter Buttons */}
-          <div className="flex flex-wrap gap-3 justify-center mb-8">
+          <div className="flex flex-wrap gap-3 justify-center">
             <Button
               variant={selectedClass === 'all' ? 'primary' : 'outline'}
               onClick={() => setSelectedClass('all')}
+              className={selectedClass === 'all' ? 'bg-[#3d0f19] hover:bg-[#2a0a12] border-[#3d0f19]' : ''}
             >
               All Classes
             </Button>
@@ -151,18 +77,12 @@ export default function AlumniPage() {
                 variant={selectedClass === className ? 'primary' : 'outline'}
                 onClick={() => setSelectedClass(className)}
                 size="sm"
+                className={selectedClass === className ? 'bg-[#3d0f19] hover:bg-[#2a0a12] border-[#3d0f19]' : ''}
               >
                 {className}
               </Button>
             ))}
           </div>
-
-          {/* Results Count */}
-          <p className="text-center text-gray-600 mb-8">
-            Showing {filteredAlumni.length} alumni
-            {selectedClass !== 'all' && ` from ${selectedClass} class`}
-            {searchTerm && ` matching "${searchTerm}"`}
-          </p>
         </div>
       </section>
 
@@ -174,34 +94,89 @@ export default function AlumniPage() {
               <table className="w-full">
                 <thead className="bg-gray-50">
                   <tr>
-                    <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900">Name</th>
-                    <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900">Company</th>
-                    <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900">Position</th>
-                    <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900">Class</th>
+                    <th className="px-4 py-3 text-left text-sm font-semibold text-gray-900">Name</th>
+                    <th className="px-4 py-3 text-left text-sm font-semibold text-gray-900">Company</th>
+                    <th className="px-4 py-3 text-left text-sm font-semibold text-gray-900">Position</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-gray-200">
-                  {filteredAlumni.map((alumnus, index) => (
-                    <tr 
-                      key={`${alumnus.name}-${index}`}
-                      className="hover:bg-gray-50 transition-colors duration-150"
-                    >
-                      <td className="px-6 py-4 text-sm font-medium text-gray-900">
-                        {alumnus.name}
-                      </td>
-                      <td className="px-6 py-4 text-sm text-gray-600">
-                        {alumnus.company}
-                      </td>
-                      <td className="px-6 py-4 text-sm text-gray-600">
-                        {alumnus.position}
-                      </td>
-                      <td className="px-6 py-4 text-sm text-gray-600">
-                        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
-                          {alumnus.class}
-                        </span>
-                      </td>
-                    </tr>
-                  ))}
+                <tbody>
+                  {(() => {
+                    // Group alumni by class
+                    const groupedAlumni = filteredAlumni.reduce((acc, alumnus) => {
+                      if (!acc[alumnus.class]) {
+                        acc[alumnus.class] = [];
+                      }
+                      acc[alumnus.class].push(alumnus);
+                      return acc;
+                    }, {} as Record<string, typeof filteredAlumni>);
+
+                    // Get ordered class names
+                    const classOrder = [
+                      'Founder', 'Alpha', 'Beta', 'Gamma', 'Delta', 'Epsilon', 'Zeta', 'Eta', 'Theta', 'Iota',
+                      'Kappa', 'Lambda', 'Mu', 'Nu', 'Xi', 'Omicron', 'Pi', 'Rho', 'Sigma', 'Tau', 'Upsilon',
+                      'Phi', 'Chi', 'Psi', 'Alpha Alpha', 'Alpha Beta', 'Alpha Gamma'
+                    ];
+
+                    const orderedClasses = Object.keys(groupedAlumni).sort((a, b) => {
+                      const indexA = classOrder.indexOf(a);
+                      const indexB = classOrder.indexOf(b);
+                      return indexA - indexB;
+                    });
+
+                    // Render grouped alumni with dividers
+                    const rows: React.ReactElement[] = [];
+                    
+                    orderedClasses.forEach((className, classIndex) => {
+                      const classAlumni = groupedAlumni[className];
+                      
+                      // Add class header row
+                      rows.push(
+                        <tr key={`class-header-${className}`} className="bg-red-50 border-t-2" style={{ borderColor: '#3d0f19' }}>
+                          <td colSpan={3} className="px-4 py-2">
+                            <div className="flex items-center justify-between">
+                              <h3 className="text-lg font-semibold font-merriweather" style={{ color: '#3d0f19' }}>
+                                {className} Class
+                              </h3>
+                              <span className="text-sm font-medium" style={{ color: '#3d0f19' }}>
+                                {classAlumni.length} {classAlumni.length === 1 ? 'member' : 'members'}
+                              </span>
+                            </div>
+                          </td>
+                        </tr>
+                      );
+                      
+                      // Add a small spacer row between classes for better visual separation
+                      if (classIndex < orderedClasses.length - 1) {
+                        rows.push(
+                          <tr key={`spacer-${className}`} className="h-1 bg-gray-50">
+                            <td colSpan={3}></td>
+                          </tr>
+                        );
+                      }
+                      
+                      // Add alumni rows for this class
+                      classAlumni.forEach((alumnus, index) => {
+                        rows.push(
+                          <tr 
+                            key={`${alumnus.name}-${index}`}
+                            className="hover:bg-gray-50 transition-colors duration-150"
+                          >
+                            <td className="px-4 py-2 text-sm font-medium text-gray-900">
+                              {alumnus.name}
+                            </td>
+                            <td className="px-4 py-2 text-sm text-gray-600">
+                              {alumnus.company}
+                            </td>
+                            <td className="px-4 py-2 text-sm text-gray-600">
+                              {alumnus.position}
+                            </td>
+                          </tr>
+                        );
+                      });
+                    });
+                    
+                    return rows;
+                  })()}
                 </tbody>
               </table>
             </div>
@@ -211,10 +186,7 @@ export default function AlumniPage() {
                 <p className="text-gray-500 text-lg">No alumni found matching your criteria.</p>
                 <Button
                   variant="outline"
-                  onClick={() => {
-                    setSearchTerm('');
-                    setSelectedClass('all');
-                  }}
+                  onClick={() => setSelectedClass('all')}
                   className="mt-4"
                 >
                   Clear Filters
@@ -228,25 +200,25 @@ export default function AlumniPage() {
       {/* Notable Alumni Highlight */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-playfair font-bold text-center mb-12">
+          <h2 className="text-4xl font-merriweather font-bold text-center mb-12">
             Making Impact Worldwide
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <Card className="p-6 text-center">
-              <div className="text-3xl font-bold text-blue-600 mb-2">500M+</div>
-              <div className="text-lg font-semibold mb-2">Capital Raised</div>
-              <div className="text-gray-600">By alumni-founded startups</div>
-            </Card>
-            <Card className="p-6 text-center">
-              <div className="text-3xl font-bold text-blue-600 mb-2">15+</div>
-              <div className="text-lg font-semibold mb-2">Startups Founded</div>
-              <div className="text-gray-600">By our entrepreneurial alumni</div>
-            </Card>
-            <Card className="p-6 text-center">
-              <div className="text-3xl font-bold text-blue-600 mb-2">92%</div>
-              <div className="text-lg font-semibold mb-2">Haas Acceptance</div>
-              <div className="text-gray-600">Success rate for business school</div>
-            </Card>
+            <div className="bg-white p-6 text-center rounded-lg shadow-lg">
+              <div className="text-3xl font-bold mb-2" style={{ color: '#3d0f19' }}>500M+</div>
+              <div className="text-lg font-semibold mb-2 font-inter">Capital Raised</div>
+              <div className="text-gray-600 font-inter">By alumni-founded startups</div>
+            </div>
+            <div className="bg-white p-6 text-center rounded-lg shadow-lg">
+              <div className="text-3xl font-bold mb-2" style={{ color: '#3d0f19' }}>15+</div>
+              <div className="text-lg font-semibold mb-2 font-inter">Startups Founded</div>
+              <div className="text-gray-600 font-inter">By our entrepreneurial alumni</div>
+            </div>
+            <div className="bg-white p-6 text-center rounded-lg shadow-lg">
+              <div className="text-3xl font-bold mb-2" style={{ color: '#3d0f19' }}>92%</div>
+              <div className="text-lg font-semibold mb-2 font-inter">Haas Acceptance</div>
+              <div className="text-gray-600 font-inter">Success rate for business school</div>
+            </div>
           </div>
         </div>
       </section>

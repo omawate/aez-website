@@ -1,4 +1,4 @@
-import { Hero, InfoSection, CountersSection } from '@/components/sections';
+import { Hero, InfoSection, CountersSection, AlumniDestinationsSection } from '@/components/sections';
 import { Button } from '@/components/ui';
 import { statsCounters } from '@/lib/constants';
 
@@ -53,6 +53,9 @@ export default function Home() {
         counters={statsCounters}
         className="bg-neutral-50"
       />
+
+      {/* Alumni Destinations Section */}
+      <AlumniDestinationsSection />
     </main>
   );
 }

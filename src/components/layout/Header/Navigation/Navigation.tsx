@@ -12,10 +12,12 @@ import { navigation, socialLinks } from '@/lib/constants';
 export interface NavigationProps extends ComponentProps {
   items?: NavItem[];
   variant?: 'desktop' | 'mobile';
+  isScrolled?: boolean;
+  isTransparent?: boolean;
 }
 
 const Navigation = React.forwardRef<HTMLElement, NavigationProps>(
-  ({ className, items = navigation, variant = 'desktop', ...props }, ref) => {
+  ({ className, items = navigation, variant = 'desktop', isScrolled = false, isTransparent = false, ...props }, ref) => {
     const pathname = usePathname();
 
     if (variant === 'mobile') {
@@ -126,7 +128,12 @@ const Navigation = React.forwardRef<HTMLElement, NavigationProps>(
             {item.dropdown ? (
               <Dropdown
                 trigger={
-                  <span className="text-sm font-medium text-white transition-colors hover:text-white/80">
+                  <span className={cn(
+                    'text-sm font-medium transition-colors',
+                    pathname === item.href 
+                      ? 'text-[#3d0f19] font-semibold' 
+                      : isTransparent && !isScrolled ? 'text-white hover:text-white/80' : 'text-neutral-900 hover:text-neutral-600'
+                  )}>
                     {item.label}
                   </span>
                 }
@@ -138,7 +145,10 @@ const Navigation = React.forwardRef<HTMLElement, NavigationProps>(
                 href={item.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm font-medium text-white transition-colors hover:text-white/80"
+                className={cn(
+                  'text-sm font-medium transition-colors',
+                  isTransparent && !isScrolled ? 'text-white hover:text-white/80' : 'text-neutral-900 hover:text-neutral-600'
+                )}
               >
                 {item.label}
               </a>
@@ -146,8 +156,10 @@ const Navigation = React.forwardRef<HTMLElement, NavigationProps>(
               <Link
                 href={item.href}
                 className={cn(
-                  'text-sm font-medium text-white transition-colors hover:text-white/80',
-                  pathname === item.href && 'text-accent-400'
+                  'text-sm font-medium transition-colors',
+                  pathname === item.href 
+                    ? 'text-[#3d0f19] font-semibold' 
+                    : isTransparent && !isScrolled ? 'text-white hover:text-white/80' : 'text-neutral-900 hover:text-neutral-600'
                 )}
               >
                 {item.label}
@@ -162,7 +174,10 @@ const Navigation = React.forwardRef<HTMLElement, NavigationProps>(
             href={socialLinks.instagram}
             target="_blank"
             rel="noopener noreferrer"
-            className="p-1 text-white hover:text-white/80 transition-colors"
+            className={cn(
+              'p-1 transition-colors',
+              isTransparent && !isScrolled ? 'text-white hover:text-white/80' : 'text-neutral-900 hover:text-neutral-600'
+            )}
             aria-label="Instagram"
           >
             <Instagram className="h-6 w-6" />
@@ -171,7 +186,10 @@ const Navigation = React.forwardRef<HTMLElement, NavigationProps>(
             href={socialLinks.linkedin}
             target="_blank"
             rel="noopener noreferrer"
-            className="p-1 text-white hover:text-white/80 transition-colors"
+            className={cn(
+              'p-1 transition-colors',
+              isTransparent && !isScrolled ? 'text-white hover:text-white/80' : 'text-neutral-900 hover:text-neutral-600'
+            )}
             aria-label="LinkedIn"
           >
             <Linkedin className="h-6 w-6" />

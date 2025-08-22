@@ -80,9 +80,8 @@ const Header = React.forwardRef<HTMLElement, HeaderProps>(
           <div className="hidden md:block">
             <Navigation 
               variant="desktop"
-              className={cn(
-                transparent && !isScrolled ? 'text-white' : 'text-neutral-900'
-              )}
+              isScrolled={isScrolled}
+              isTransparent={transparent}
             />
           </div>
 

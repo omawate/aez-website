@@ -52,9 +52,9 @@ const InfoSection = React.forwardRef<HTMLElement, InfoSectionProps>(
               'space-y-6',
               layout === 'right' ? 'lg:pr-8' : 'lg:pl-8 lg:col-start-2'
             )}>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-900 font-playfair leading-tight">
-                {title}
-              </h2>
+                      <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-900 font-merriweather leading-tight">
+          {title}
+        </h2>
               
               <div className="space-y-4">
                 {contentArray.map((paragraph, index) => (

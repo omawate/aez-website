@@ -9,8 +9,8 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        'montserrat': ['var(--font-montserrat)', 'system-ui', 'sans-serif'],
-        'playfair': ['var(--font-playfair)', 'serif'],
+        'inter': ['var(--font-inter)', 'system-ui', 'sans-serif'],
+        'merriweather': ['var(--font-merriweather)', 'serif'],
         'sora': ['var(--font-sora)', 'system-ui', 'sans-serif'],
       },
       colors: {
