@@ -158,7 +158,6 @@ function BrotherCard({ brother, showExecutiveTag }: BrotherCardProps) {
         <div className="space-y-2 text-sm text-gray-600 mb-4">
           <p className="font-medium">{brother.class}</p>
           <p>{brother.major}</p>
-          <p>{brother.hometown}</p>
         </div>
         
         <p className="text-sm text-gray-700">{brother.bio}</p>

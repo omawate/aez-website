@@ -10,7 +10,7 @@ export interface FooterProps extends ComponentProps {
 
 const Footer = React.forwardRef<HTMLElement, FooterProps>(
   ({ className, ...props }, ref) => {
-    const currentYear = new Date().getFullYear();
+    const currentYear = 2003;
 
     return (
       <footer

@@ -12,12 +12,12 @@ export const AlumniDestinationsSection = ({ className = '' }: AlumniDestinations
         <p className="text-xl text-gray-600 text-center mb-12 max-w-3xl mx-auto">
           Our brothers have gone on to excel worldwide—in Silicon Valley tech, Wall Street finance, top graduate programs, and innovative startups.
         </p>
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <Image
             src="https://cdn.prod.website-files.com/6374140cc01b132d1cad9d00/65b24201cf035e83b6b9f75e_Screenshot%202024-01-25%20at%203.11.29%E2%80%AFAM.jpg"
             alt="Alumni Destinations Map"
-            width={1200}
-            height={800}
+            width={1400}
+            height={900}
             className="w-full h-auto rounded-lg shadow-lg"
             priority
           />
