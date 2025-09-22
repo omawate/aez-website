@@ -223,8 +223,8 @@ export const regularBrothers: Brother[] = [
     isExecutive: false
   },
   {
-    id: 'praneeth-pantula',
-    name: 'Praneeth Pantula',
+    id: 'praneel-pantula',
+    name: 'Praneel Pantula',
     class: 'Alpha Delta',
     major: 'Material Science & Engineering',
     year: 'junior',
