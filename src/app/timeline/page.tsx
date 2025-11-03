@@ -1,5 +1,3 @@
-import { Button } from '@/components/ui/Button';
-
 export default function TimelinePage() {
   return (
     <main>
@@ -21,23 +19,17 @@ export default function TimelinePage() {
       </section>
 
       {/* Rush Timeline */}
-      <section className="py-16">
+      {/* <section className="py-16">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl font-merriweather font-bold text-center mb-12">Rush Timeline</h2>
 
-          {/* Vertical Timeline */}
           <div className="relative">
-            {/* Vertical Line */}
             <div className="absolute left-8 top-0 bottom-0 w-1 bg-[#3d0f19]"></div>
 
-            {/* Timeline Items */}
             <div className="space-y-12">
-              {/* Coffee Chats Begin */}
               <div className="relative flex items-start">
-                {/* Timeline Node */}
                 <div className="absolute left-6 w-4 h-4 bg-[#3d0f19] rounded-full border-4 border-white shadow-lg"></div>
 
-                {/* Content */}
                 <div className="ml-16 flex-1">
                   <div className="bg-white rounded-lg shadow-lg p-6">
                     <div className="flex items-start gap-6">
@@ -62,7 +54,6 @@ export default function TimelinePage() {
                 </div>
               </div>
 
-              {/* Rush Party */}
               <div className="relative flex items-start">
                 <div className="absolute left-6 w-4 h-4 bg-[#3d0f19] rounded-full border-4 border-white shadow-lg"></div>
                 <div className="ml-16 flex-1">
@@ -88,7 +79,6 @@ export default function TimelinePage() {
                 </div>
               </div>
 
-              {/* Infosession */}
               <div className="relative flex items-start">
                 <div className="absolute left-6 w-4 h-4 bg-[#3d0f19] rounded-full border-4 border-white shadow-lg"></div>
                 <div className="ml-16 flex-1">
@@ -115,7 +105,6 @@ export default function TimelinePage() {
                 </div>
               </div>
 
-              {/* Meet & Greet */}
               <div className="relative flex items-start">
                 <div className="absolute left-6 w-4 h-4 bg-[#3d0f19] rounded-full border-4 border-white shadow-lg"></div>
                 <div className="ml-16 flex-1">
@@ -141,7 +130,6 @@ export default function TimelinePage() {
                 </div>
               </div>
 
-              {/* Applications Due */}
               <div className="relative flex items-start">
                 <div className="absolute left-6 w-4 h-4 bg-[#3d0f19] rounded-full border-4 border-white shadow-lg"></div>
                 <div className="ml-16 flex-1">
@@ -169,34 +157,12 @@ export default function TimelinePage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
-      {/* Ready to Join */}
-      <section className="py-16 bg-gradient-to-br from-[#3d0f19] to-[#5a1a2a] text-white">
+      {/* Coming Soon Message */}
+      <section className="min-h-[40vh] flex items-center justify-center">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-merriweather font-bold mb-6">Ready to Join?</h2>
-          <p className="text-xl mb-8 opacity-90">
-            Don&apos;t wait! Start your journey with AEZ today by signing up for coffee chats and attending our events.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button
-              variant="secondary"
-              size="lg"
-              href="https://airtable.com/appoEeyrE51PL5szS/pagzqgUqNe5oEKFy7/form"
-              external
-            >
-              Apply Now
-            </Button>
-            <Button
-              variant="outline"
-              size="lg"
-              href="https://www.instagram.com/aezberkeley/"
-              external
-              className="border-white text-white hover:bg-white hover:text-[#3d0f19]"
-            >
-              Follow on Instagram
-            </Button>
-          </div>
+          <h2 className="text-4xl font-merriweather font-bold">Come back for Spring &apos;26 rush!</h2>
         </div>
       </section>
     </main>

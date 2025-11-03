@@ -21,6 +21,11 @@ export const navigation: NavItem[] = [
     external: true,
   },
   {
+    label: 'Paradigm',
+    href: 'https://berkeleyparadigm.org/',
+    external: true,
+  },
+  {
     label: 'Join Us',
     href: '#',
     dropdown: [
@@ -76,27 +81,71 @@ export const statsCounters: CounterData[] = [
   },
 ];
 
-// Slideshow images
+// Slideshow images - Add your image links here
 export const slideshowImages = [
   {
-    src: 'https://lh3.googleusercontent.com/pw/AP1GczNeV9GeZNAIpb5tQy_nF9d2f0yvnp-f_nSmVwW-0EC-jWua6Sth5jc9oojpktckkjCAhimJuU-LV8xIXYiBsCzLzP1fP_Ko1Cg3aZ4Ne1z7tUmqn72kKv2-jYnRTvTY-vagqkNdRNLfGOJmOjfqHi0DoQ=w2626-h1750-s-no-gm',
-    alt: 'AEZ Brothers at Berkeley Event',
-    caption: 'Brotherhood in Action',
+    src: 'https://cdn.prod.website-files.com/6374140cc01b132d1cad9d00/6903c40b91935c9898b88381_IMG_1031-min.JPG',
+    alt: 'AEZ Event Photo 1',
   },
   {
-    src: '/images/slideshow/2M0A4078.jpg',
-    alt: 'AEZ Professional Event',
-    caption: 'Professional Development',
+    src: 'https://cdn.prod.website-files.com/6374140cc01b132d1cad9d00/6903c40ace2f16ce3860e50f_100_1014-min.JPG',
+    alt: 'AEZ Event Photo 2',
   },
   {
-    src: 'https://lh3.googleusercontent.com/pw/AP1GczNBbu0_DrgxHUJ19WAGno04E1VPEHcAM2ur5R_Hp2FH36T-xTAQUnF4cC5bT4W5eUI-PSNo9i-ozIwHai_wqT82SOJrV-_qCOZe_SXXOAC6jWMs09Vrf9F2q6J9R_l9Vi91K-HUZ6xVZFTaaPYC1bhp=w2626-h1750-s-no-gm',
-    alt: 'AEZ Social Gathering',
-    caption: 'Building Lifelong Connections',
+    src: 'https://cdn.prod.website-files.com/6374140cc01b132d1cad9d00/6903c1cf9184968c5f3d2109_IMG_2143.JPG',
+    alt: 'AEZ Event Photo 3',
   },
   {
-    src: '/images/slideshow/2M0A0175.jpg',
-    alt: 'AEZ Group Photo',
-    caption: 'United in Excellence',
+    src: 'https://cdn.prod.website-files.com/6374140cc01b132d1cad9d00/6903c1cfdab45cd5aa72397d_2M0A3828.jpg',
+    alt: 'AEZ Event Photo 4',
+  },
+  {
+    src: 'https://cdn.prod.website-files.com/6374140cc01b132d1cad9d00/6903c1ce61d868ed7907009e_IMG_4286.JPG',
+    alt: 'AEZ Event Photo 5',
+  },
+  {
+    src: 'https://cdn.prod.website-files.com/6374140cc01b132d1cad9d00/6903c1ce9948942f57ac3cef_IMG_4098.JPG',
+    alt: 'AEZ Event Photo 6',
+  },
+  {
+    src: 'https://cdn.prod.website-files.com/6374140cc01b132d1cad9d00/6903c1ce0a6ba6442ea5b1c3_2M0A0177%20(1).jpg',
+    alt: 'AEZ Event Photo 7',
+  },
+  {
+    src: 'https://cdn.prod.website-files.com/6374140cc01b132d1cad9d00/6903c1ceb7c0502d7af204e6_2M0A0645.jpg',
+    alt: 'AEZ Event Photo 8',
+  },
+  {
+    src: 'https://cdn.prod.website-files.com/6374140cc01b132d1cad9d00/6903c1cd690e3c8e85a11412_2M0A4037.jpg',
+    alt: 'AEZ Event Photo 9',
+  },
+  {
+    src: 'https://cdn.prod.website-files.com/6374140cc01b132d1cad9d00/6903c1cdfbe567fe9cc24b13_IMG_4024.JPG',
+    alt: 'AEZ Event Photo 10',
+  },
+  {
+    src: 'https://cdn.prod.website-files.com/6374140cc01b132d1cad9d00/6903c1cd641fc0402b6e66c2_DSC05876.jpg',
+    alt: 'AEZ Event Photo 11',
+  },
+  {
+    src: 'https://cdn.prod.website-files.com/6374140cc01b132d1cad9d00/6903c1cd155a37ad75e0564c_2A0CF023-1017-452C-AACD-CEA6F14C52AB.JPG',
+    alt: 'AEZ Event Photo 12',
+  },
+  {
+    src: 'https://cdn.prod.website-files.com/6374140cc01b132d1cad9d00/6903c1cd690e3c8e85a113d8_IMG_2891.JPG',
+    alt: 'AEZ Event Photo 13',
+  },
+  {
+    src: 'https://cdn.prod.website-files.com/6374140cc01b132d1cad9d00/6903c1cc4f46207b2bbb1b0e_IMG_2178.JPG',
+    alt: 'AEZ Event Photo 14',
+  },
+  {
+    src: 'https://cdn.prod.website-files.com/6374140cc01b132d1cad9d00/6903c1ccf529c6ca26e8cf33_IMG_0224.JPG',
+    alt: 'AEZ Event Photo 15',
+  },
+  {
+    src: 'https://cdn.prod.website-files.com/6374140cc01b132d1cad9d00/6903c1cbd230cb475ef00365_20250209_123711_C6DD9E.jpeg',
+    alt: 'AEZ Event Photo 16',
   },
 ];
 

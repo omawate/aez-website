@@ -6,10 +6,10 @@ import { executives, regularBrothers } from '@/data/brothers';
 import { Brother } from '@/types';
 import { brotherClasses } from '@/lib/constants';
 import { Button } from '@/components/ui/Button';
+import { Card, CardContent } from '@/components/ui/Card';
 
 export default function BrothersPage() {
   const [selectedClass, setSelectedClass] = useState<string>('all');
-  // const [showExecutives, setShowExecutives] = useState(true);
 
   const allBrothers = useMemo(() => [...executives, ...regularBrothers], []);
 
@@ -49,50 +49,58 @@ export default function BrothersPage() {
   }, [allBrothers]);
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-paper">
       {/* Hero Section */}
       <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: 'url(https://cdn.prod.website-files.com/6374140cc01b132d1cad9d00/68a8ff34a04275a564363165_IMG_6035.jpeg)'
+            backgroundImage: 'url(https://cdn.prod.website-files.com/6374140cc01b132d1cad9d00/68a8ff34a04275a564363165_IMG_6035.jpeg)',
+            backgroundAttachment: 'fixed'
           }}
         />
-        <div className="absolute inset-0 bg-black/50" />
-        <div className="relative z-10 text-center text-white">
-          <h1 className="text-6xl md:text-8xl font-merriweather font-bold mb-4">Brothers</h1>
-                      <p className="text-xl md:text-2xl font-inter max-w-2xl mx-auto px-4">
-              Meet the driven individuals who make up Alpha Epsilon Zeta
-            </p>
+        <div className="absolute inset-0 bg-black/60" />
+        <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-4">
+          <h1 className="text-5xl md:text-7xl font-serif font-bold mb-6 tracking-tightish text-white" style={{color: '#ffffff !important'}}>Brothers</h1>
+          <p className="text-lg md:text-xl font-sans font-light max-w-2xl mx-auto leading-relaxed">
+          Meet the driven individuals who make up Alpha Epsilon Zeta
+          </p>
         </div>
       </section>
 
+
       {/* Filters Section */}
-      <section className="py-12 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row gap-6 items-center justify-center mb-8">
-            <div className="flex flex-wrap gap-3 justify-center">
+      <section className="py-4 bg-paper">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col gap-6 items-center justify-center">
+            <div className="flex flex-wrap gap-2 justify-center">
               <Button
-                variant={selectedClass === 'all' ? 'primary' : 'outline'}
+                variant='outline'
                 onClick={() => setSelectedClass('all')}
-                className={selectedClass === 'all' ? 'bg-[#3d0f19] hover:bg-[#2a0a12] border-[#3d0f19]' : ''}
+                size="sm"
+                className={`rounded-none ${selectedClass === 'all' ? 'bg-[#3d0f19] text-white border-[#3d0f19] ring-2 ring-[#3d0f19]/50 shadow-lg' : ''}`}
               >
                 All Classes
               </Button>
-              {availableClasses.map((className) => (
+              {availableClasses.slice(0, 6).map((className) => (
                 <Button
                   key={className}
-                  variant={selectedClass === className ? 'primary' : 'outline'}
+                  variant='outline'
                   onClick={() => setSelectedClass(className)}
-                  className={selectedClass === className ? 'bg-[#3d0f19] hover:bg-[#2a0a12] border-[#3d0f19]' : ''}
+                  size="sm"
+                  className={`rounded-none ${selectedClass === className ? 'bg-[#3d0f19] text-white border-[#3d0f19] ring-2 ring-[#3d0f19]/50 shadow-lg' : ''}`}
                 >
                   {brotherClasses[className as keyof typeof brotherClasses]?.fullName || className}
                 </Button>
               ))}
+              {availableClasses.length > 6 && (
+                <Button variant="outline" size="sm" className="rounded-none">
+                  +{availableClasses.length - 6} More
+                </Button>
+              )}
             </div>
+            
           </div>
-
-
         </div>
       </section>
 
@@ -111,10 +119,14 @@ export default function BrothersPage() {
       )}
 
       {/* Brothers Grid */}
-      <section className="py-16">
+      <section className="pt-8 pb-16">
         <div className="max-w-7xl mx-auto px-1 sm:px-2 lg:px-3">
-          {selectedClass === 'all' && (
+          {selectedClass === 'all' ? (
             <h2 className="text-4xl font-merriweather font-bold text-center mb-12">All Brothers</h2>
+          ) : (
+            <h2 className="text-4xl font-merriweather font-bold text-center mb-12">
+              {brotherClasses[selectedClass as keyof typeof brotherClasses]?.fullName || selectedClass}
+            </h2>
           )}
           
                       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
@@ -135,33 +147,79 @@ interface BrotherCardProps {
 
 function BrotherCard({ brother, showExecutiveTag }: BrotherCardProps) {
   return (
-    <div className="overflow-hidden">
+    <Card className="card-hover-overlay group hover:shadow-soft transition-all duration-300 border-0 p-0">
       <div className="relative aspect-[3/4] overflow-hidden">
         <Image
           src={brother.image}
           alt={`${brother.name} headshot`}
           fill
-          className="object-cover transition-transform duration-300 hover:scale-105"
+          className="object-cover transition-transform duration-300"
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
         />
-      </div>
-      
-      <div className="p-2">
-        <h3 className="text-xl font-merriweather font-bold mb-2">{brother.name}</h3>
+        
+        {/* Executive Tag */}
         {showExecutiveTag && brother.isExecutive && brother.executiveRole && (
-          <div className="mb-2">
-            <span className="text-white px-2 py-1 rounded-full text-xs font-medium" style={{ backgroundColor: '#3d0f19' }}>
+          <div className="absolute top-3 left-3 z-10 m-1">
+            <span className="bg-ink/95 backdrop-blur-sm text-white px-2 py-1 text-sm font-medium uppercase tracking-caps shadow-lg border border-white/20" style={{color: '#ffffff !important', textShadow: '0 2px 4px rgba(0, 0, 0, 0.8)', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1)'}}>
               {brother.executiveRole}
             </span>
           </div>
         )}
-        <div className="space-y-2 text-sm text-gray-600 mb-4">
-          <p className="font-medium">{brother.class}</p>
-          <p>{brother.major}</p>
+        
+        {/* Basic Info Overlay (Always Visible, Hidden on Hover) */}
+        <div className="absolute bottom-0 left-0 right-0 p-4 group-hover:opacity-0 transition-opacity duration-300" style={{background: 'linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.6) 50%, transparent 100%)'}}>
+          <div className="text-2xl font-serif font-semibold mb-2 text-white" style={{color: '#ffffff !important', WebkitTextFillColor: '#ffffff !important', textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)'}}>{brother.name}</div>
+          <div className="space-y-1 text-sm">
+            <p className="text-xs uppercase tracking-caps text-gray-400 font-medium">{brother.class}</p>
+            <p className="text-white/90">{brother.major}</p>
+          </div>
         </div>
         
-        <p className="text-sm text-gray-700">{brother.bio}</p>
+        {/* Summary Overlay (Shows on Hover) */}
+        <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-300 p-4 flex flex-col justify-end" style={{background: 'linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.7) 50%, transparent 100%)'}}>
+          <div className="text-2xl font-serif font-semibold mb-2 text-white" style={{color: '#ffffff !important', WebkitTextFillColor: '#ffffff !important', textShadow: '0 2px 4px rgba(0, 0, 0, 0.5)'}}>{brother.name}</div>
+          <div className="space-y-1 text-sm mb-3">
+            <p className="text-xs uppercase tracking-caps text-gray-400 font-medium">{brother.class}</p>
+            <p className="text-white/95 font-medium">{brother.major}</p>
+          </div>
+          <p className="text-sm text-white/95 leading-relaxed line-clamp-12" style={{textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)'}}>{brother.bio}</p>
+        </div>
       </div>
-    </div>
+    </Card>
+  );
+}
+
+function ProfessionalBrotherListCard({ brother, showExecutiveTag }: BrotherCardProps) {
+  return (
+    <Card className="hover:shadow-soft transition-all duration-200">
+      <div className="flex items-center gap-4 p-4">
+        <div className="relative w-16 h-16 flex-shrink-0 overflow-hidden">
+          <Image
+            src={brother.image}
+            alt={`${brother.name} headshot`}
+            fill
+            className="object-cover"
+            sizes="64px"
+          />
+        </div>
+        
+        <div className="flex-1 min-w-0">
+          <div className="flex items-center gap-3 mb-1">
+            <h3 className="text-lg font-serif font-semibold text-ink">{brother.name}</h3>
+            {showExecutiveTag && brother.isExecutive && brother.executiveRole && (
+              <span className="bg-ink text-white px-2 py-1 text-sm font-medium uppercase tracking-caps" style={{color: '#ffffff !important', textShadow: '2px 2px 4px rgba(0, 0, 0, 0.8)'}}>
+                {brother.executiveRole}
+              </span>
+            )}
+          </div>
+          <div className="flex items-center gap-4 text-sm text-stone mb-2">
+            <span className="text-editorial-label">{brother.class}</span>
+            <span>•</span>
+            <span>{brother.major}</span>
+          </div>
+          <p className="text-sm text-stone line-clamp-2 leading-relaxed">{brother.bio}</p>
+        </div>
+      </div>
+    </Card>
   );
 }

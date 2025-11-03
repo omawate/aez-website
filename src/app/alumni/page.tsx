@@ -89,7 +89,7 @@ export default function AlumniPage() {
       {/* Alumni Table */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+          <div className="bg-white shadow-lg overflow-hidden">
             <div className="overflow-x-auto">
               <table className="w-full">
                 <thead className="bg-gray-50">
@@ -204,17 +204,17 @@ export default function AlumniPage() {
             Making Impact Worldwide
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-white p-6 text-center rounded-lg shadow-lg">
+            <div className="bg-white p-6 text-center shadow-lg">
               <div className="text-3xl font-bold mb-2" style={{ color: '#3d0f19' }}>500M+</div>
               <div className="text-lg font-semibold mb-2 font-inter">Capital Raised</div>
               <div className="text-gray-600 font-inter">By alumni-founded startups</div>
             </div>
-            <div className="bg-white p-6 text-center rounded-lg shadow-lg">
+            <div className="bg-white p-6 text-center shadow-lg">
               <div className="text-3xl font-bold mb-2" style={{ color: '#3d0f19' }}>15+</div>
               <div className="text-lg font-semibold mb-2 font-inter">Startups Founded</div>
               <div className="text-gray-600 font-inter">By our entrepreneurial alumni</div>
             </div>
-            <div className="bg-white p-6 text-center rounded-lg shadow-lg">
+            <div className="bg-white p-6 text-center shadow-lg">
               <div className="text-3xl font-bold mb-2" style={{ color: '#3d0f19' }}>92%</div>
               <div className="text-lg font-semibold mb-2 font-inter">Haas Acceptance</div>
               <div className="text-gray-600 font-inter">Success rate for business school</div>

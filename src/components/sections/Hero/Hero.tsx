@@ -33,10 +33,9 @@ const Hero = React.forwardRef<HTMLElement, HeroProps>(
 
     const backgroundStyles = backgroundImage ? {
       backgroundImage: `url(${backgroundImage})`,
-      backgroundPosition: 'center 80%',
+      backgroundPosition: 'center center',
       backgroundSize: 'cover',
       backgroundRepeat: 'no-repeat',
-      backgroundAttachment: 'fixed',
     } : {};
 
     return (
@@ -44,6 +43,7 @@ const Hero = React.forwardRef<HTMLElement, HeroProps>(
         ref={ref}
         className={cn(
           'relative flex items-center justify-center overflow-hidden',
+          'bg-scroll md:bg-fixed', // Scroll on mobile, fixed on larger screens
           heightClasses[height],
           className
         )}
