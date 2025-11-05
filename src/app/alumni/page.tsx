@@ -50,7 +50,7 @@ export default function AlumniPage() {
         
         {/* Main Content */}
         <div className="relative z-10 text-center text-white mb-auto mt-auto pt-16 pb-32">
-          <h1 className="text-6xl md:text-8xl font-merriweather font-bold mb-4">Our Alumni</h1>
+          <h1 className="text-5xl md:text-7xl font-serif font-bold mb-6 tracking-tightish text-white" style={{color: '#ffffff !important'}}>Our Alumni</h1>
           <p className="text-xl md:text-2xl font-inter max-w-2xl mx-auto px-4">
             Our brothers have gone on to excel worldwide—in Silicon Valley tech, Wall Street finance, top graduate programs, and innovative startups
           </p>
