@@ -49,7 +49,7 @@ export default function AlumniPage() {
         <div className="absolute inset-0 bg-black/50" />
         
         {/* Main Content */}
-        <div className="relative z-10 text-center text-white mb-auto mt-auto pt-16 pb-32">
+        <div className="relative z-10 text-center text-white mb-auto mt-auto pt-16 pb-48 md:pb-32">
           <h1 className="text-5xl md:text-7xl font-serif font-bold mb-6 tracking-tightish text-white" style={{color: '#ffffff !important'}}>Our Alumni</h1>
           <p className="text-xl md:text-2xl font-inter max-w-2xl mx-auto px-4">
             Our brothers have gone on to excel worldwide—in Silicon Valley tech, Wall Street finance, top graduate programs, and innovative startups
@@ -58,13 +58,13 @@ export default function AlumniPage() {
 
         {/* Statistics Overlay at Bottom with Vignette */}
         <div 
-          className="absolute bottom-0 left-0 right-0 z-10 p-6 md:p-8"
+          className="absolute bottom-0 left-0 right-0 z-10 py-6 px-4 md:py-8 md:px-6"
           style={{
             background: 'linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.6) 50%, transparent 100%)'
           }}
         >
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
               <div className="text-center">
                 <div className="text-4xl md:text-5xl font-semibold mb-1 text-white" style={{textShadow: '0 2px 4px rgba(0, 0, 0, 0.5)'}}>500M+</div>
                 <div className="text-base font-medium text-white/90 font-inter">Capital Raised</div>
