@@ -209,7 +209,7 @@ export const alumni: Alumni[] = [
   { name: 'Aamir Hudda', company: 'Attain', position: 'CEO & Co-Founder', class: 'Chi' },
   { name: 'Joshua Kurian', company: 'Fragment Data Technologies', position: 'Growth Lead', class: 'Chi' },
   { name: 'Nathan Lee', company: 'Squarepoint', position: 'Investment Analyst', class: 'Chi' },
-  { name: 'Krish Patel', company: 'US Geological Survey', position: 'Data Scientist', class: 'Chi' },
+  { name: 'Krish Patel', company: 'National Institute of Health', position: 'Post Baccalaureate Fellow', class: 'Chi' },
   { name: 'Surya Rajan', company: 'Atlas', position: 'Software Engineer', class: 'Chi' },
   { name: 'Rahul Ravishankar', company: 'xAI', position: 'Member of Technical Staff', class: 'Chi' },
   { name: 'Arjun Venkatesh', company: 'General Atomics', position: 'Mission Analysis Engineer', class: 'Chi' },
