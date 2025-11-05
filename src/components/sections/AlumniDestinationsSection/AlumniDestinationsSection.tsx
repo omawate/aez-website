@@ -18,7 +18,7 @@ export const AlumniDestinationsSection = ({ className = '' }: AlumniDestinations
             alt="Alumni Destinations Map"
             width={1400}
             height={900}
-            className="w-full h-auto rounded-lg shadow-lg"
+            className="w-full h-auto"
             priority
           />
         </div>

@@ -21,7 +21,7 @@ export default function CoffeeChatsPage() {
       </section>
 
       {/* Airtable Embed Section */}
-      <section className="py-16">
+      {/* <section className="py-16">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <iframe 
             className="airtable-embed" 
@@ -31,6 +31,13 @@ export default function CoffeeChatsPage() {
             height="533" 
             style={{ background: 'transparent', border: '1px solid #ccc' }}
           />
+        </div>
+      </section> */}
+
+      {/* Coming Soon Message */}
+      <section className="min-h-[40vh] flex items-center justify-center">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-4xl font-merriweather font-bold">Come back for Spring &apos;26 rush!</h2>
         </div>
       </section>
     </div>

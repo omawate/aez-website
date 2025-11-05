@@ -1,6 +1,7 @@
-import { Hero, InfoSection, CountersSection, AlumniDestinationsSection } from '@/components/sections';
+import { Hero, InfoSection, CountersSection, AlumniDestinationsSection, ImageCarousel, HorizontalScroller } from '@/components/sections';
 import { Button } from '@/components/ui';
-import { statsCounters } from '@/lib/constants';
+import { statsCounters, slideshowImages } from '@/lib/constants';
+import Image from 'next/image';
 
 export default function Home() {
   return (
@@ -11,21 +12,22 @@ export default function Home() {
         subtitle="Berkeley's Premier Multidisciplinary Professional Fraternity"
         backgroundImage="https://cdn.prod.website-files.com/6374140cc01b132d1cad9d00/6823a2530009ab7af361bb37_2M0A9552.jpg"
         height="full"
+        className="[&_h1]:font-serif"
         actions={
           <>
             <Button
               href="/brothers"
               size="lg"
-              className="bg-primary-600 hover:bg-primary-700 text-white px-8 py-4 text-lg font-semibold"
+              className="bg-ink/95 backdrop-blur-sm text-white hover:bg-white hover:text-neutral-900 px-8 py-4 text-lg font-semibold rounded-none border border-white/20 shadow-lg"
+              style={{color: '#ffffff !important', textShadow: '0 2px 4px rgba(0, 0, 0, 0.8)', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1)'}}
             >
               Meet Our Brothers
             </Button>
             <Button
               href="https://airtable.com/appoEeyrE51PL5szS/pagzqgUqNe5oEKFy7/form"
-              external
-              variant="outline"
               size="lg"
-              className="border-white text-white hover:bg-white hover:text-neutral-900 px-8 py-4 text-lg font-semibold"
+              className="bg-ink/95 backdrop-blur-sm text-white hover:bg-white hover:text-neutral-900 px-8 py-4 text-lg font-semibold rounded-none border border-white/20 shadow-lg"
+              style={{color: '#ffffff !important', textShadow: '0 2px 4px rgba(0, 0, 0, 0.8)', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1)'}}
             >
               Apply Now
             </Button>
@@ -55,7 +57,21 @@ export default function Home() {
       />
 
       {/* Alumni Destinations Section */}
-      <AlumniDestinationsSection />
+      <AlumniDestinationsSection className="[&_.rounded-lg]:rounded-none" />
+
+      {/* Horizontal Scroller Section */}
+      <HorizontalScroller
+        title="Our Community"
+        subtitle="Experience the brotherhood and lifelong connections of AEZ"
+        items={slideshowImages}
+        height="lg"
+        itemWidth={350}
+        gap={20}
+        visibleItems={3}
+        showArrows={true}
+        className="bg-neutral-50"
+      />
+
     </main>
   );
 }

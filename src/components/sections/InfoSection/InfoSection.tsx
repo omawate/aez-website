@@ -74,7 +74,7 @@ const InfoSection = React.forwardRef<HTMLElement, InfoSectionProps>(
                 'relative',
                 layout === 'right' ? 'lg:pl-8' : 'lg:pr-8 lg:col-start-1 lg:row-start-1'
               )}>
-                <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
+                <div className="relative aspect-[4/3] overflow-hidden shadow-2xl">
                   <Image
                     src={image.src}
                     alt={image.alt}
