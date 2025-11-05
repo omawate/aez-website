@@ -39,7 +39,7 @@ export default function AlumniPage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[75vh] flex flex-col items-center justify-center overflow-hidden">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
@@ -47,17 +47,40 @@ export default function AlumniPage() {
           }}
         />
         <div className="absolute inset-0 bg-black/50" />
-        <div className="relative z-10 text-center text-white">
-          <h1 className="text-6xl md:text-8xl font-merriweather font-bold mb-4">Our Alumni</h1>
-                      <p className="text-xl md:text-2xl font-inter max-w-2xl mx-auto px-4">
-              Our brothers have gone on to excel worldwide—in Silicon Valley tech, Wall Street finance, top graduate programs, and innovative startups
-            </p>
+        
+        {/* Main Content */}
+        <div className="relative z-10 text-center text-white mb-auto mt-auto pt-16 pb-32">
+          <h1 className="text-5xl md:text-7xl font-serif font-bold mb-6 tracking-tightish text-white" style={{color: '#ffffff !important'}}>Our Alumni</h1>
+          <p className="text-xl md:text-2xl font-inter max-w-2xl mx-auto px-4">
+            Our brothers have gone on to excel worldwide—in Silicon Valley tech, Wall Street finance, top graduate programs, and innovative startups
+          </p>
+        </div>
+
+        {/* Statistics Overlay at Bottom with Vignette */}
+        <div 
+          className="absolute bottom-0 left-0 right-0 z-10 p-6 md:p-8"
+          style={{
+            background: 'linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.6) 50%, transparent 100%)'
+          }}
+        >
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="text-center">
+                <div className="text-4xl md:text-5xl font-semibold mb-1 text-white" style={{textShadow: '0 2px 4px rgba(0, 0, 0, 0.5)'}}>500M+</div>
+                <div className="text-base font-medium text-white/90 font-inter">Capital Raised</div>
+              </div>
+              <div className="text-center">
+                <div className="text-4xl md:text-5xl font-semibold mb-1 text-white" style={{textShadow: '0 2px 4px rgba(0, 0, 0, 0.5)'}}>15+</div>
+                <div className="text-base font-medium text-white/90 font-inter">Startups Founded</div>
+              </div>
+              <div className="text-center">
+                <div className="text-4xl md:text-5xl font-semibold mb-1 text-white" style={{textShadow: '0 2px 4px rgba(0, 0, 0, 0.5)'}}>100%</div>
+                <div className="text-base font-medium text-white/90 font-inter">Placement Rate</div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
-
-
-
-
 
       {/* Class Filter Section */}
       <section className="py-12 bg-gray-50">
@@ -65,19 +88,20 @@ export default function AlumniPage() {
           {/* Class Filter Buttons */}
           <div className="flex flex-wrap gap-3 justify-center">
             <Button
-              variant={selectedClass === 'all' ? 'primary' : 'outline'}
+              variant="outline"
               onClick={() => setSelectedClass('all')}
-              className={selectedClass === 'all' ? 'bg-[#3d0f19] hover:bg-[#2a0a12] border-[#3d0f19]' : ''}
+              size="sm"
+              className={`rounded-none ${selectedClass === 'all' ? 'bg-[#3d0f19] text-white border-[#3d0f19] ring-2 ring-[#3d0f19]/50 shadow-lg' : ''}`}
             >
               All Classes
             </Button>
             {availableClasses.map((className) => (
               <Button
                 key={className}
-                variant={selectedClass === className ? 'primary' : 'outline'}
+                variant="outline"
                 onClick={() => setSelectedClass(className)}
                 size="sm"
-                className={selectedClass === className ? 'bg-[#3d0f19] hover:bg-[#2a0a12] border-[#3d0f19]' : ''}
+                className={`rounded-none ${selectedClass === className ? 'bg-[#3d0f19] text-white border-[#3d0f19] ring-2 ring-[#3d0f19]/50 shadow-lg' : ''}`}
               >
                 {className}
               </Button>
@@ -131,16 +155,11 @@ export default function AlumniPage() {
                       
                       // Add class header row
                       rows.push(
-                        <tr key={`class-header-${className}`} className="bg-red-50 border-t-2" style={{ borderColor: '#3d0f19' }}>
+                        <tr key={`class-header-${className}`} className="bg-gray-100 border-t-2 border-gray-300">
                           <td colSpan={3} className="px-4 py-2">
-                            <div className="flex items-center justify-between">
-                              <h3 className="text-lg font-semibold font-merriweather" style={{ color: '#3d0f19' }}>
-                                {className} Class
-                              </h3>
-                              <span className="text-sm font-medium" style={{ color: '#3d0f19' }}>
-                                {classAlumni.length} {classAlumni.length === 1 ? 'member' : 'members'}
-                              </span>
-                            </div>
+                            <h3 className="text-lg font-semibold font-merriweather text-gray-900">
+                              {className} Class
+                            </h3>
                           </td>
                         </tr>
                       );
@@ -193,32 +212,6 @@ export default function AlumniPage() {
                 </Button>
               </div>
             )}
-          </div>
-        </div>
-      </section>
-
-      {/* Notable Alumni Highlight */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-merriweather font-bold text-center mb-12">
-            Making Impact Worldwide
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-white p-6 text-center shadow-lg">
-              <div className="text-3xl font-bold mb-2" style={{ color: '#3d0f19' }}>500M+</div>
-              <div className="text-lg font-semibold mb-2 font-inter">Capital Raised</div>
-              <div className="text-gray-600 font-inter">By alumni-founded startups</div>
-            </div>
-            <div className="bg-white p-6 text-center shadow-lg">
-              <div className="text-3xl font-bold mb-2" style={{ color: '#3d0f19' }}>15+</div>
-              <div className="text-lg font-semibold mb-2 font-inter">Startups Founded</div>
-              <div className="text-gray-600 font-inter">By our entrepreneurial alumni</div>
-            </div>
-            <div className="bg-white p-6 text-center shadow-lg">
-              <div className="text-3xl font-bold mb-2" style={{ color: '#3d0f19' }}>92%</div>
-              <div className="text-lg font-semibold mb-2 font-inter">Haas Acceptance</div>
-              <div className="text-gray-600 font-inter">Success rate for business school</div>
-            </div>
           </div>
         </div>
       </section>
