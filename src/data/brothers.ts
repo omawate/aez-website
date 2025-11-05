@@ -80,7 +80,7 @@ export const executives: Brother[] = [
     year: 'junior',
     hometown: 'Sacramento, California',
     bio: 'Kanishk is a junior and part of the Alpha Gamma class studying Data Science. He is from Sacramento and is interested in tech consulting. He also enjoys playing spikeball, basketball, and journaling.',
-    image: 'https://cdn.prod.website-files.com/6374140cc01b132d1cad9d00/66d150c39966d6bb222ae065_Screenshot%202024-08-29%20at%209.55.21%E2%80%AFPM.png',
+    image: 'https://cdn.prod.website-files.com/6374140cc01b132d1cad9d00/68ed677d47402446a65f8f80_vankayala.jpg',
     email: 'kvankaya@berkeley.edu',
     interests: ['tech consulting', 'spikeball', 'basketball', 'journaling'],
     isExecutive: true,
