@@ -67,7 +67,6 @@ export default function AlumniPage() {
             <Button
               variant={selectedClass === 'all' ? 'primary' : 'outline'}
               onClick={() => setSelectedClass('all')}
-              className={selectedClass === 'all' ? 'bg-[#3d0f19] hover:bg-[#2a0a12] border-[#3d0f19]' : ''}
             >
               All Classes
             </Button>
@@ -77,7 +76,6 @@ export default function AlumniPage() {
                 variant={selectedClass === className ? 'primary' : 'outline'}
                 onClick={() => setSelectedClass(className)}
                 size="sm"
-                className={selectedClass === className ? 'bg-[#3d0f19] hover:bg-[#2a0a12] border-[#3d0f19]' : ''}
               >
                 {className}
               </Button>
@@ -131,16 +129,11 @@ export default function AlumniPage() {
                       
                       // Add class header row
                       rows.push(
-                        <tr key={`class-header-${className}`} className="bg-red-50 border-t-2" style={{ borderColor: '#3d0f19' }}>
+                        <tr key={`class-header-${className}`} className="bg-gray-100 border-t-2 border-gray-300">
                           <td colSpan={3} className="px-4 py-2">
-                            <div className="flex items-center justify-between">
-                              <h3 className="text-lg font-semibold font-merriweather" style={{ color: '#3d0f19' }}>
-                                {className} Class
-                              </h3>
-                              <span className="text-sm font-medium" style={{ color: '#3d0f19' }}>
-                                {classAlumni.length} {classAlumni.length === 1 ? 'member' : 'members'}
-                              </span>
-                            </div>
+                            <h3 className="text-lg font-semibold font-merriweather text-gray-900">
+                              {className} Class
+                            </h3>
                           </td>
                         </tr>
                       );
@@ -205,17 +198,17 @@ export default function AlumniPage() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div className="bg-white p-6 text-center shadow-lg">
-              <div className="text-3xl font-bold mb-2" style={{ color: '#3d0f19' }}>500M+</div>
+              <div className="text-3xl font-bold mb-2 text-gray-900">500M+</div>
               <div className="text-lg font-semibold mb-2 font-inter">Capital Raised</div>
               <div className="text-gray-600 font-inter">By alumni-founded startups</div>
             </div>
             <div className="bg-white p-6 text-center shadow-lg">
-              <div className="text-3xl font-bold mb-2" style={{ color: '#3d0f19' }}>15+</div>
+              <div className="text-3xl font-bold mb-2 text-gray-900">15+</div>
               <div className="text-lg font-semibold mb-2 font-inter">Startups Founded</div>
               <div className="text-gray-600 font-inter">By our entrepreneurial alumni</div>
             </div>
             <div className="bg-white p-6 text-center shadow-lg">
-              <div className="text-3xl font-bold mb-2" style={{ color: '#3d0f19' }}>92%</div>
+              <div className="text-3xl font-bold mb-2 text-gray-900">92%</div>
               <div className="text-lg font-semibold mb-2 font-inter">Haas Acceptance</div>
               <div className="text-gray-600 font-inter">Success rate for business school</div>
             </div>
