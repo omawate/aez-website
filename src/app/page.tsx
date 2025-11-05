@@ -72,9 +72,6 @@ export default function Home() {
         className="bg-neutral-50"
       />
 
-      {/* Alumni Destinations Section */}
-      <AlumniDestinationsSection className="[&_.rounded-lg]:rounded-none" />
-
       {/* Horizontal Scroller Section */}
       <HorizontalScroller
         title="Our Community"
@@ -87,6 +84,9 @@ export default function Home() {
         showArrows={true}
         className="bg-neutral-50"
       />
+
+      {/* Alumni Destinations Section */}
+      <AlumniDestinationsSection className="[&_.rounded-lg]:rounded-none" />
 
     </main>
   );
