@@ -53,10 +53,12 @@ export default function BrothersPage() {
       {/* Hero Section */}
       <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
         <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          className="absolute inset-0 bg-no-repeat"
           style={{
             backgroundImage: 'url(https://cdn.prod.website-files.com/6374140cc01b132d1cad9d00/68a8ff34a04275a564363165_IMG_6035.jpeg)',
-            backgroundAttachment: 'fixed'
+            backgroundAttachment: 'fixed',
+            backgroundSize: 'contain',
+            backgroundPosition: 'center top'
           }}
         />
         <div className="absolute inset-0 bg-black/60" />
