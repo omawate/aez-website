@@ -6,7 +6,8 @@ export default function TimelinePage() {
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: 'url(https://cdn.prod.website-files.com/6374140cc01b132d1cad9d00/64b8403f97c120b90d8bfd50_DSC06251.jpg)'
+            backgroundImage: 'url(https://cdn.prod.website-files.com/6374140cc01b132d1cad9d00/64b8403f97c120b90d8bfd50_DSC06251.jpg)',
+            backgroundAttachment: 'fixed'
           }}
         />
         <div className="absolute inset-0 bg-black/50" />

@@ -203,8 +203,8 @@ export const regularBrothers: Brother[] = [
     major: 'Economics & Data Science',
     year: 'sophomore',
     hometown: 'San Jose, California',
-    bio: 'Kabir is a sophomore from San Jose, California studying Economics and Data Science. He is a part of the Alpha Delta class and interested in pursuing a career in consulting or data analytics. In his free time, Kabir enjoys lifting, thrifting, and listening to music.',
-    image: 'https://cdn.prod.website-files.com/6374140cc01b132d1cad9d00/690b17afd9be789c7e483421_kabir-dua.jpeg',
+    bio: 'Kabir Dua is a sophomore from San Jose, California, studying Data Science and Economics; he also spent a significant portion of his childhood growing up in Singapore and traveling all around Southeast Asia. He is a part of the Alpha Delta class and is interested in pursuing a career in finance or management/sustainability consulting. In his free time, Kabir enjoys collecting vinyl records, hypertrophy training, and listening to Spanish music. ',
+    image: 'https://cdn.prod.website-files.com/6374140cc01b132d1cad9d00/690d2020754afab994a0c4e6_kabir_dua_crop.jpg',
     email: 'TBD',
     interests: ['TBD'],
     isExecutive: false
@@ -302,7 +302,7 @@ export const regularBrothers: Brother[] = [
   },
   {
     id: 'sid-kasi',
-    name: 'Sid Kasi',
+    name: 'Siddarth Kasi',
     class: 'Alpha Delta',
     major: 'EECS & Business (MET)',
     year: 'sophomore',

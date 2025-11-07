@@ -8,7 +8,8 @@ export default function CoffeeChatsPage() {
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: 'url(https://cdn.prod.website-files.com/6374140cc01b132d1cad9d00/68a8ff9a16825940e9801db8_Screenshot%202025-08-22%20at%204.39.02%E2%80%AFPM.png)'
+            backgroundImage: 'url(https://cdn.prod.website-files.com/6374140cc01b132d1cad9d00/68a8ff9a16825940e9801db8_Screenshot%202025-08-22%20at%204.39.02%E2%80%AFPM.png)',
+            backgroundAttachment: 'fixed'
           }}
         />
         <div className="absolute inset-0 bg-black/50" />
