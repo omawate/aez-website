@@ -175,7 +175,7 @@ export const alumni: Alumni[] = [
   { name: 'Aakash Ramachandran', company: 'Starpath', position: 'Founding Mechanical Engineer', class: 'Sigma' },
 
   // Tau
-  { name: 'Advait Deoskar', company: 'Walmart Global Tech', position: 'Software Engineer II', class: 'Tau' },
+  { name: 'Advait Deoskar', company: 'Robinhood', position: 'Software Engineer', class: 'Tau' },
   { name: 'Ritvik Gadhok', company: 'Wells Fargo', position: 'Investment Banking Analyst', class: 'Tau' },
   { name: 'Shlok Gore', company: 'Casino Bleu', position: 'Creative Director', class: 'Tau' },
   { name: 'Ritvik Kandarkar', company: 'USC Marshall', position: 'Master of Science in Business Analytics Candidate\nMaster of Science in Finance Candidate', class: 'Tau' },
