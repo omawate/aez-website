@@ -295,7 +295,7 @@ export const regularBrothers: Brother[] = [
     year: 'sophomore',
     hometown: 'Bay Area, California',
     bio: 'Abhi is a sophomore from San Jose, California and part of the Alpha Epsilon class. He is majoring in EECS and his professional interests lie in software engineering, startups, and venture capital. Outside of work, Abhi enjoys watching the Warriors, playing poker and trying new restaurants in Berkeley with friends.',
-    image: 'https://cdn.prod.website-files.com/6374140cc01b132d1cad9d00/690b17ae6d581f76a171555e_abhinav-bellapu.jpg',
+    image: 'https://cdn.prod.website-files.com/6374140cc01b132d1cad9d00/6912cea79e0b1fe6bece2338_bellapu-crop.jpg',
     email: 'TBD',
     interests: ['TBD'],
     isExecutive: false
@@ -304,7 +304,7 @@ export const regularBrothers: Brother[] = [
     id: 'sid-kasi',
     name: 'Siddarth Kasi',
     class: 'Alpha Delta',
-    major: 'Business Administration (M.E.T.)',
+    major: 'EECS and Business Administration (M.E.T.)',
     year: 'sophomore',
     hometown: 'Orlando, Florida',
     bio: 'Sid is a sophomore from Orlando, Florida majoring in EECS and Business through the MET program and he is part of the Alpha Delta class. His professional interests are currently startups and finance. Outside of work, he loves traveling having been to 12 countries so far. In his free time he also lifts, trading, and listening to house music.',
