@@ -84,7 +84,7 @@ export default function BrothersPage() {
               >
                 All Classes
               </Button>
-              {availableClasses.slice(0, 6).map((className) => (
+              {availableClasses.map((className) => (
                 <Button
                   key={className}
                   variant='outline'
@@ -95,11 +95,6 @@ export default function BrothersPage() {
                   {brotherClasses[className as keyof typeof brotherClasses]?.fullName || className}
                 </Button>
               ))}
-              {availableClasses.length > 6 && (
-                <Button variant="outline" size="sm" className="rounded-none">
-                  +{availableClasses.length - 6} More
-                </Button>
-              )}
             </div>
             
           </div>
