@@ -114,20 +114,6 @@ export const executives: Brother[] = [
     isExecutive: true,
     executiveRole: 'Rush Chair'
   },
-  {
-    id: 'dhanush-sunchu',
-    name: 'Dhanush Sunchu',
-    class: 'Psi',
-    major: 'Computer Science and Economics',
-    year: 'senior',
-    hometown: 'Olympia, Washington',
-    bio: 'Dhanush Sunchu is a senior in the Psi Class. He is from Olympia, Washington and attended Olympia High School. Dhanush intends to double major in Data Science and Business Administration. He is primarily interested in the world of startups and hopes to break into the field of product management after college. In his free time, he enjoys playing sports, watching movies, and traveling with his friends.',
-    image: 'https://cdn.prod.website-files.com/6374140cc01b132d1cad9d00/690b17af2fd9cfce34bc7d64_dhanush-sunchu.jpg',
-    email: 'dansunchu@berkeley.edu',
-    interests: ['startups', 'product management', 'sports', 'movies', 'traveling'],
-    isExecutive: true,
-    executiveRole: 'Senior Advisor'
-  }
 ];
 
 export const regularBrothers: Brother[] = [
